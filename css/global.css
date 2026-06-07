@@ -25,7 +25,9 @@ body {
     background: #771a1c;
     color: #fff;
     padding: 1rem 0;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .navbar .container {
@@ -110,6 +112,123 @@ body {
     transform: rotate(-45deg);
 }
 
+/* Footer */
+footer {
+  border-top: 1px solid #fbd5b2;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  background: #771a1c;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+}
+
+.footer-top .footer-links  { flex: 1; }
+.footer-top .footer-social { flex: 1; justify-content: center; }
+.footer-top .powered-by    { flex: 1; justify-content: flex-end; }
+
+.footer-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #fbd5b2;
+  margin-top: 2rem;
+}
+
+.footer-left { text-align: left; }
+
+footer p { color: var(--muted); font-size: .82rem; line-height: 1.8; margin: 0; }
+footer a { color: var(--lime); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+.footer-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  color: #fbd5b2;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.footer-links-title {
+  color: var(--white) !important;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: .3rem !important;
+  line-height: 1 !important;
+}
+
+.footer-links-group a {
+  color: var(--muted) !important;
+  font-size: .82rem;
+}
+
+.footer-links-group a:hover {
+  color: var(--lime) !important;
+  text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.powered-by {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fbd5b2;
+}
+
+.powered-by p {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+}
+
+.powered-by img { 
+    width: 120px; 
+    margin-left: .5rem;
+}
+
+.social-btn {
+  width: 38px; height: 38px;
+  background: #fbd5b2;
+  border: 1px solid #fbd5b2;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; font-size: 1rem;
+  transition: background .2s, border-color .2s;
+}
+.social-btn:hover { background: #fcbc81; border-color: var(--lime); }
+
+.footer-copy {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .78rem; color: #fbd5b2;
+  text-align: center;
+  pointer-events: none;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .navbar .container {
@@ -153,46 +272,50 @@ body {
         text-align: center;
         margin: 10px 0;
     }
-}
 
-/* Footer */
-.footer {
-    background: #771a1c;
-    color: #fbd5b2;
-    text-align: center;
-    padding: 1rem 0;
+    footer {
+        padding: 2rem 1.5rem;
+    }
+
+  .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .powered-by {
+        display: none;
+    }
+
+    .footer-bottom {
+        position: static;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .footer-copy {
+    position: static;
+    transform: none;
+
     width: 100%;
-    margin-top: auto;
-}
+    white-space: normal;
+    overflow: visible;
 
-.footer .footer-links {
-    list-style: none;
-    padding: 0;
-}
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 1rem;
+    font-size: .8rem;
+  }
 
-.footer .footer-links li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.footer .footer-links a {
-    color: #fbd5b2;
-    text-decoration: none;
-}
-
-.footer .footer-links a:hover {
-    color: #d7aeae;
-}
-
-.footer .social-media {
-    margin-top: 1rem;
-}
-
-.footer .social-media a {
-    color: #fbd5b2;
-    margin: 0 10px;
-    font-size: 15px;
-    text-decoration: none;
 }
 
 @font-face {
