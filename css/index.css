@@ -13,7 +13,7 @@
 }
 
 .season-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #333;
     margin: 0;
     text-transform: uppercase;
@@ -77,6 +77,30 @@
     background-color: #5c1416;
     transform: translateX(-50%) translateY(-5px);
 }
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: #771a1c;
+  border: 1px solid #5c1416;
+  border-radius: 100px;
+  padding: .5rem 1.1rem;
+  font-size: .85rem;
+  color: #fbd5b2;
+}
+
+.pill-icon { color: #771a1c }
 
 @media (max-width: 768px) {
     .slider-wrapper {

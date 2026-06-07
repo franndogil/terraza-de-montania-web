@@ -36,7 +36,7 @@ body {
 }
 
 .navbar .logo img {
-    height: 80px;
+    height: 45px;
 }
 
 .navbar .nav-links {
@@ -191,7 +191,7 @@ body {
 .footer .social-media a {
     color: #fbd5b2;
     margin: 0 10px;
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
 }
 
