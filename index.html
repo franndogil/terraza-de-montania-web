@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terraza de montaña</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preload" as="image" href="assets/images/slide1.jpg">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Terraza de Montaña</a>
+            <a href="index.html" class="logo"><img src="assets/images/logos/name.png" alt="Terraza de Montaña Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
@@ -20,8 +25,19 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Bienvenido a Terraza de Montaña</h1>
+    <div class="season-section">
+        <h2 class="season-title">Temporada 2026/2027</h2>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="slide"><img src="assets/images/house-1/1.jpeg" alt="Slide 1" fetchpriority="high"></div>
+            <div class="slide"><img src="assets/images/house-1/14.jpeg" alt="Slide 2" loading="lazy"></div>
+            <div class="slide"><img src="assets/images/house-1/3.jpeg" alt="Slide 3" loading="lazy"></div>
+            <!-- Duplicate first slide for infinite loop -->
+            <div class="slide"><img src="assets/images/house-1/1.jpeg" alt="Slide 1" loading="lazy"></div>
+        </div>
+        <a href="contacto.html" class="reserve-btn">Reserva ahora!</a>
     </div>
 
     <footer class="footer">
@@ -34,9 +50,9 @@
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
             <div class="social-media">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="mailto:terrazademontana@gmail.com">Email</a>
+                <a href="https://instagram.com/terrazademontana" target="_blank">Instagram</a>
+                <a href="https://wa.me/5491140273519" target="_blank">WhatsApp</a>
             </div>
             <p>&copy; 2026 Terraza de Montaña. Todos los derechos reservados.</p>
         </div>

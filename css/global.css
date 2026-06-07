@@ -3,7 +3,7 @@ body {
     font-family: 'MontserratCustom', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fbd5b2;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,6 @@ body {
     background: #771a1c;
     color: #fff;
     padding: 1rem 0;
-    border-bottom: #d7aeae 3px solid;
     position: relative;
 }
 
@@ -163,6 +162,7 @@ body {
     text-align: center;
     padding: 1rem 0;
     width: 100%;
+    margin-top: auto;
 }
 
 .footer .footer-links {
@@ -200,81 +200,4 @@ body {
     src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
-
-/* Contact Page Styles */
-.contact-page {
-    background-color: #fff;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-.contact-page h1 {
-    color: #771a1c;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-page p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2rem;
-}
-
-.contact-details {
-    list-style: none;
-    padding: 0;
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-details li {
-    background-color: #fbd5b2;
-    padding: 1.5rem;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    color: #771a1c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-details li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-details li strong {
-    font-weight: 600;
-}
-
-.contact-details li a {
-    color: #771a1c;
-    text-decoration: none;
-    font-weight: bold;
-    word-break: break-all;
-    margin-left: 1rem;
-}
-
-.contact-details li a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .contact-details li {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-    .contact-details li a {
-        margin-left: 0;
-    }
 }
