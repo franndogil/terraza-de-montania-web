@@ -28,6 +28,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 9999;
 }
 
 .navbar .container {
@@ -303,19 +304,18 @@ footer a:hover { text-decoration: underline; }
     }
 
     .footer-copy {
-    position: static;
-    transform: none;
+        position: static;
+        transform: none;
 
-    width: 100%;
-    white-space: normal;
-    overflow: visible;
+        width: 100%;
+        white-space: normal;
+        overflow: visible;
 
-    text-align: center;
-    line-height: 1.5;
-    padding: 0 1rem;
-    font-size: .8rem;
-  }
-
+        text-align: center;
+        line-height: 1.5;
+        padding: 1rem 1rem;
+        font-size: .8rem;
+    }
 }
 
 @font-face {
