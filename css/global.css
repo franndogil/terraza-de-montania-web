@@ -12,6 +12,7 @@ body {
 
 .content-wrap {
     flex: 1;
+    padding-top: 90px;
 }
 
 .container {
@@ -119,7 +120,7 @@ footer {
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
-  background: #771a1c;
+  background: #771a1c;  
 }
 
 .footer-top {
@@ -278,7 +279,7 @@ footer a:hover { text-decoration: underline; }
         padding: 2rem 1.5rem;
     }
 
-  .footer-top {
+    .footer-top {
         flex-direction: column;
         gap: 2rem;
         text-align: center;
@@ -294,6 +295,10 @@ footer a:hover { text-decoration: underline; }
     }
 
     .powered-by {
+        display: none;
+    }
+
+    .footer-social {
         display: none;
     }
 
