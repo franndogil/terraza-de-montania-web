@@ -12,7 +12,7 @@ body {
 
 .content-wrap {
     flex: 1;
-    padding-top: 90px;
+    padding-top: 58px;
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
 .navbar {
     background: #771a1c;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -40,7 +40,7 @@ body {
 }
 
 .navbar .logo img {
-    height: 45px;
+    height: 38px;
 }
 
 .navbar .nav-links {
@@ -55,7 +55,7 @@ body {
 .navbar .nav-links a {
     color: #fbd5b2;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .navbar .nav-links a:hover {
@@ -116,11 +116,10 @@ body {
 
 /* Footer */
 footer {
-  border-top: 1px solid #fbd5b2;
-  padding: 2rem 3rem;
+  padding: 1.25rem 3rem;
   display: flex;
   flex-direction: column;
-  background: #771a1c;  
+  background: #771a1c;
 }
 
 .footer-top {
@@ -136,10 +135,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   border-top: 1px solid #fbd5b2;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .footer-left { text-align: left; }
@@ -279,7 +277,7 @@ footer a:hover { text-decoration: underline; }
     }
 
     footer {
-        padding: 2rem 1.5rem;
+        padding: 1.25rem 1.5rem;
     }
 
     .footer-top {
@@ -307,8 +305,8 @@ footer a:hover { text-decoration: underline; }
 
     .footer-bottom {
         position: static;
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
     }
 
     .footer-copy {

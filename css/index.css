@@ -1,30 +1,66 @@
-.header-section {
-    text-align: center;
-    padding: 2rem 0 1rem;
-}
-
-.header-section h1 {
-    color: #771a1c;
-}
-
-.season-section {
-    text-align: center;
-    padding: 1rem;
-}
-
-.season-title {
-    font-size: 1.8rem;
-    color: #333;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.content-wrap {
+    padding-top: 58px;
 }
 
 .slider-wrapper {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: calc(100vh - 58px);
     overflow: hidden;
+}
+
+/* Gradiente oscuro sobre la imagen para que el texto sea legible */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.10) 0%,
+        rgba(0, 0, 0, 0.45) 100%
+    );
+    z-index: 5;
+}
+
+/* Título y botón centrados sobre la imagen */
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.season-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-main {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .slider {
@@ -57,66 +93,70 @@
 
 .reserve-btn {
     position: absolute;
-    bottom: 15%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #771a1c;
     color: #fbd5b2;
-    padding: 1rem 2.5rem;
+    padding: 0.85rem 2.25rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 10;
+    z-index: 11;
 }
 
 .reserve-btn:hover {
     background-color: #5c1416;
-    transform: translateX(-50%) translateY(-5px);
+    transform: translateX(-50%) translateY(-3px);
 }
-
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  justify-content: center;
-  padding: 1rem 1rem;
-  border-top: 1px solid rgba(255,255,255,.05);
-  border-bottom: 1px solid rgba(255,255,255,.05);
-}
-
-.pill {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  background: #771a1c;
-  border: 1px solid #5c1416;
-  border-radius: 100px;
-  padding: .5rem 1.1rem;
-  font-size: .85rem;
-  color: #fbd5b2;
-}
-
-.pill-icon { color: #771a1c }
 
 @media (max-width: 768px) {
     .slider-wrapper {
-        height: 40vh;
-    }
-    
-    .season-title {
-        font-size: 1.5rem;
-    }
-    
-    .reserve-btn {
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
+        height: calc(100svh - 58px);
     }
 
-    .pills{
-        padding: 1.7rem 1rem;
+    .season-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        letter-spacing: 2px;
     }
+
+    .hero-main {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+        text-transform: none;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+
+    .reserve-btn {
+        font-size: 1.05rem;
+        padding: 0.9rem 0;
+        width: 78%;
+    }
+
+    .hero-main {
+        font-size: 3rem;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        justify-content: center;
+    }
+
 }
