@@ -1,75 +1,141 @@
-.contact-page {
-    background-color: #fff;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+/* Hero */
+.contact-hero {
+    width: 100%;
+    height: 280px;
+    background-image: url('../assets/images/terraza-hero.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(119, 26, 28, 0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.contact-hero-overlay h1 {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.contact-hero-overlay p {
+    color: #fbd5b2;
+    font-size: 1.1rem;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Cards section */
+.contact-section {
+    padding: 3.5rem 0 4rem;
+}
+
+.contact-section .container {
+    overflow: visible;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0.75rem 0.5rem 1rem;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(119, 26, 28, 0.1);
+    padding: 2.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(119, 26, 28, 0.18);
+}
+
+.card-icon {
+    width: 72px;
+    height: 72px;
+    background-color: #771a1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.25s ease;
+}
+
+.contact-card:hover .card-icon {
+    background-color: #9e2224;
+}
+
+.card-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.contact-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #771a1c;
+    margin: 0;
     text-align: center;
 }
 
-.contact-page h1 {
-    color: #771a1c;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-page p {
-    font-size: 1.1rem;
+.contact-card span {
+    font-size: 0.95rem;
     color: #555;
-    margin-bottom: 2rem;
-}
-
-.contact-details {
-    list-style: none;
-    padding: 0;
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-details li {
-    background-color: #fbd5b2;
-    padding: 1.5rem;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    color: #771a1c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-details li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-details li strong {
-    font-weight: 600;
-}
-
-.contact-details li a {
-    color: #771a1c;
-    text-decoration: none;
-    font-weight: bold;
+    text-align: center;
     word-break: break-all;
-    margin-left: 1rem;
+    line-height: 1.5;
 }
 
-.contact-details li a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .contact-details li {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .contact-details li a {
-        margin-left: 0;
+}
+
+@media (max-width: 580px) {
+    .contact-hero {
+        height: 220px;
+    }
+
+    .contact-hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .contact-hero-overlay p {
+        font-size: 0.95rem;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .contact-section {
+        padding: 2.5rem 0 3rem;
     }
 }
