@@ -1,0 +1,270 @@
+/* ── HERO ─────────────────────────────────────────────────── */
+.nos-hero {
+    height: 65vh;
+    min-height: 400px;
+    background-image: url('../assets/images/house-1/14.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.nos-hero-overlay {
+    width: 100%;
+    padding: 4rem 10%;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    color: #fff;
+}
+
+.nos-hero-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #fbd5b2;
+}
+
+.nos-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.15;
+    color: #fff;
+}
+
+/* ── SHARED SECTION STYLES ───────────────────────────────── */
+.nos-section {
+    padding: 5rem 0;
+}
+
+.nos-container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #771a1c;
+    margin-bottom: 0.75rem;
+}
+
+.section-tag--light {
+    color: #fbd5b2;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 2rem;
+    line-height: 1.2;
+}
+
+.section-title--light {
+    color: #fff;
+}
+
+/* ── TEXT ─────────────────────────────────────────────────── */
+.nos-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #444;
+    margin: 0 0 1.25rem;
+    max-width: 70ch;
+}
+
+.nos-text--cols {
+    columns: 2;
+    gap: 3rem;
+}
+
+.nos-text--cols p {
+    max-width: none;
+    break-inside: avoid;
+}
+
+/* ── DARK SECTION (ANFITRIONES) ─────────────────────────── */
+.nos-dark-section {
+    background: #771a1c;
+}
+
+.nos-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.nos-split-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.nos-split-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #fbd5b2;
+    margin: 0 0 1.25rem;
+}
+
+/* ── FEATURE SECTION (FILOSOFÍA) ─────────────────────────── */
+.nos-lead {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #444;
+    max-width: 65ch;
+    margin: 0 0 3rem;
+}
+
+.nos-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nos-value-card {
+    border-top: 3px solid #771a1c;
+    padding-top: 1.5rem;
+}
+
+.nos-value-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #771a1c;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.nos-value-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.6rem;
+    color: #333;
+}
+
+.nos-value-card p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #555;
+    margin: 0;
+}
+
+/* ── QUOTE ─────────────────────────────────────────────────── */
+.nos-quote-section {
+    padding: 5rem 0;
+    border-top: 1px solid rgba(119,26,28,0.15);
+    border-bottom: 1px solid rgba(119,26,28,0.15);
+}
+
+.nos-quote {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #771a1c;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+    font-style: italic;
+}
+
+/* ── CTA ──────────────────────────────────────────────────── */
+.nos-cta-section {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.nos-cta-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0 0 2rem;
+}
+
+.nos-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nos-cta-btn {
+    display: inline-block;
+    background: #771a1c;
+    color: #fbd5b2;
+    text-decoration: none;
+    padding: 0.85rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+}
+
+.nos-cta-btn:hover {
+    background: #5a1315;
+    color: #fbd5b2;
+}
+
+.nos-cta-btn--outline {
+    background: transparent;
+    border: 2px solid #771a1c;
+    color: #771a1c;
+}
+
+.nos-cta-btn--outline:hover {
+    background: #771a1c;
+    color: #fbd5b2;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .nos-hero {
+        height: 55vh;
+    }
+
+    .nos-hero-overlay {
+        padding: 3rem 5%;
+    }
+
+    .nos-section {
+        padding: 3.5rem 0;
+    }
+
+    .nos-container {
+        width: 90%;
+    }
+
+    .nos-text--cols {
+        columns: 1;
+    }
+
+    .nos-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nos-split-image img {
+        height: 260px;
+    }
+
+    .nos-values {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nos-quote-section,
+    .nos-cta-section {
+        padding: 3.5rem 0;
+    }
+}
