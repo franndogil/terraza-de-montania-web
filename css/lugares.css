@@ -1,0 +1,460 @@
+/* HERO */
+.lug-hero {
+    height: 65vh;
+    min-height: 400px;
+    background-image: url('../assets/images/house-1/14.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.lug-hero-overlay {
+    width: 100%;
+    padding: 4rem 10%;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    color: #fff;
+}
+
+.lug-hero-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #fbd5b2;
+}
+
+.lug-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.15;
+    color: #fff;
+}
+
+/* SHARED SECTION */
+.lug-section {
+    padding: 5rem 0;
+}
+
+.lug-container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.lug-container--wide {
+    width: 90%;
+    max-width: 1400px;
+}
+
+.lug-section-tag {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #771a1c;
+    margin-bottom: 0.75rem;
+}
+
+.lug-section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 2rem;
+    line-height: 1.2;
+}
+
+.lug-lead {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #444;
+    max-width: 68ch;
+    margin: 0;
+}
+
+/* MAP SECTION */
+.lug-map-section {
+    border-top: 1px solid rgba(119,26,28,0.1);
+    border-bottom: 1px solid rgba(119,26,28,0.1);
+    background: #fff;
+}
+
+.lug-filters-wrap {
+    padding: 1.75rem 0 1.25rem;
+}
+
+.lug-filters {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.lug-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 1.1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 999px;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.lug-filter:hover,
+.lug-filter.active {
+    border-color: #771a1c;
+    color: #771a1c;
+    background: rgba(119,26,28,0.05);
+}
+
+.lug-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.lug-dot--naturaleza { background: #3a7d44; }
+.lug-dot--cultura    { background: #c77b2e; }
+.lug-dot--pueblos    { background: #2d6a9f; }
+
+#map {
+    width: 100%;
+    height: 520px;
+}
+
+/* Fallback cuando el mapa no carga */
+.map-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ece8;
+    min-height: 520px;
+}
+
+.map-fallback p {
+    color: #888;
+    font-size: .9rem;
+}
+
+.map-fallback--error p {
+    color: #771a1c;
+}
+
+/* Etiquetas de los marcadores */
+.map-label {
+    background: rgba(255,255,255,0.92) !important;
+    border: none !important;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.18) !important;
+    border-radius: 4px !important;
+    padding: 3px 8px !important;
+    font-family: 'MontserratCustom', sans-serif !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+}
+
+.map-label::before {
+    display: none !important;
+}
+
+.map-label--home {
+    color: #771a1c !important;
+}
+
+/* Marcadores del mapa */
+.map-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.map-marker--home {
+    width: 18px;
+    height: 18px;
+    background: #771a1c;
+    box-shadow: 0 0 0 3px #fff, 0 1px 6px rgba(0,0,0,.35);
+}
+
+/* PLACES GRID */
+.lug-places-section {
+    padding-top: 4rem;
+}
+
+.lug-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.lug-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.lug-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+    border-color: rgba(119,26,28,0.2);
+}
+
+.lug-card.is-open {
+    border-color: rgba(119,26,28,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.lug-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.lug-card-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lug-card-chevron {
+    color: #bbb;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, color 0.2s;
+}
+
+.lug-card.is-open .lug-card-chevron {
+    transform: rotate(180deg);
+    color: #771a1c;
+}
+
+.lug-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding-top 0.35s ease;
+}
+
+.lug-card.is-open .lug-card-body {
+    max-height: 220px;
+    padding-top: 0.85rem;
+}
+
+.lug-card-nav {
+    display: inline-block;
+    background: #771a1c;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.45rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: 0.75rem;
+    transition: background 0.2s;
+}
+
+.lug-card-nav:hover {
+    background: #5a1315;
+    color: #fff;
+    text-decoration: none;
+}
+
+.lug-cat-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    color: #fff;
+}
+
+.lug-cat-tag--naturaleza { background: #3a7d44; }
+.lug-cat-tag--cultura    { background: #c77b2e; }
+.lug-cat-tag--pueblos    { background: #2d6a9f; }
+
+.lug-distance {
+    font-size: 0.78rem;
+    color: #999;
+    font-weight: 600;
+}
+
+.lug-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    flex: 1;
+}
+
+.lug-card-desc {
+    font-size: 0.87rem;
+    line-height: 1.75;
+    color: #555 !important;
+    margin: 0;
+}
+
+/* CTA */
+.lug-cta-section {
+    padding: 5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(119,26,28,0.15);
+}
+
+.lug-cta-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0 0 2rem;
+}
+
+.lug-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.lug-cta-btn {
+    display: inline-block;
+    background: #771a1c;
+    color: #fbd5b2;
+    text-decoration: none;
+    padding: 0.85rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+}
+
+.lug-cta-btn:hover {
+    background: #5a1315;
+    color: #fbd5b2;
+    text-decoration: none;
+}
+
+.lug-cta-btn--outline {
+    background: transparent;
+    border: 2px solid #771a1c;
+    color: #771a1c;
+}
+
+.lug-cta-btn--outline:hover {
+    background: #771a1c;
+    color: #fbd5b2;
+}
+
+/* Popup del mapa */
+.lug-popup { min-width: 200px; }
+
+.lug-popup-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.35rem;
+}
+
+.lug-popup-cat {
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.lug-popup-dist {
+    font-size: .75rem;
+    color: #aaa;
+}
+
+.lug-popup-title {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 .5rem;
+    line-height: 1.3;
+}
+
+.lug-popup-desc {
+    font-size: .82rem;
+    line-height: 1.65;
+    color: #555;
+    margin: 0 0 .85rem;
+}
+
+.lug-popup-nav {
+    display: block;
+    background: #771a1c;
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: .45rem 1rem;
+    border-radius: 4px;
+    font-size: .82rem;
+    font-weight: 700;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.lug-popup-nav:hover {
+    background: #5a1315 !important;
+    text-decoration: none !important;
+}
+
+/* Override estilos por defecto de Leaflet en links */
+.leaflet-popup-content a.lug-popup-nav { color: #fff !important; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .lug-hero {
+        height: 55vh;
+    }
+
+    .lug-hero-overlay {
+        padding: 3rem 5%;
+    }
+
+    .lug-section {
+        padding: 3.5rem 0;
+    }
+
+    .lug-container {
+        width: 90%;
+    }
+
+    .lug-filters-wrap {
+        padding: 1.25rem 0 1rem;
+    }
+
+    .lug-filters {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #map {
+        height: 380px;
+    }
+
+    .lug-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lug-cta-section {
+        padding: 3.5rem 0;
+    }
+}

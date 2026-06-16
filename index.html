@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terraza de montaña</title>
+    <meta name="description" content="Alquilá una cabaña en las sierras de Panaholma, Valle de Traslasierra, Córdoba. Hasta 7 personas, pileta climatizada, Starlink y más de 7.000 m² de naturaleza.">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="preload" as="image" href="assets/images/slide1.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Terraza de Montaña",
+      "description": "Cabaña de alquiler en Panaholma, Valle de Traslasierra, Córdoba, Argentina.",
+      "telephone": "+5491140273519",
+      "email": "terrazademontana@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Morteritos",
+        "addressLocality": "Panaholma",
+        "addressRegion": "Córdoba",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.5960346,
+        "longitude": -65.0493451
+      },
+      "sameAs": [
+        "https://instagram.com/terrazademontana"
+      ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -19,6 +44,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="alojamientos.html">Alojamientos</a></li>
+                <li><a href="lugares.html">La zona</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
@@ -28,8 +54,8 @@
         <div class="slider-wrapper">
             <div class="slider">
                 <div class="slide"><img src="assets/images/house-1/1.jpeg" alt="Cabaña en Los Morteritos" fetchpriority="high"></div>
-                <div class="slide"><img src="assets/images/house-1/14.jpeg" alt="Entorno natural" loading="lazy"></div>
-                <div class="slide"><img src="assets/images/house-1/3.jpeg" alt="Pileta climatizada" loading="lazy"></div>
+                <div class="slide"><img src="assets/images/house-1/14.jpeg" alt="Entorno natural"></div>
+                <div class="slide"><img src="assets/images/house-1/3.jpeg" alt="Pileta climatizada"></div>
                 <!-- Duplicate first slide for infinite loop -->
                 <div class="slide"><img src="assets/images/house-1/1.jpeg" alt="Cabaña en Los Morteritos" loading="lazy"></div>
             </div>
@@ -58,14 +84,14 @@
                 </div>
             </div>
             <div class="footer-social">
-                <a href="https://wa.me/5491140273519" target="_blank" class="social-btn" title="WhatsApp"><img src="/assets/icons/whatsapp_white.png" alt=""></a>
-                <a href="https://instagram.com/terrazademontana" target="_blank" class="social-btn" title="Instagram"><img src="/assets/icons/instagram_white.png" alt=""></a>
-                <a href="mailto:terrazademontana@gmail.com" target="_blank" class="social-btn" title="Email"><img src="/assets/icons/email_white.png" alt=""></a>
+                <a href="https://wa.me/5491140273519" target="_blank" class="social-btn" title="WhatsApp" aria-label="WhatsApp"><img src="assets/icons/whatsapp_white.png" alt="WhatsApp"></a>
+                <a href="https://instagram.com/terrazademontana" target="_blank" class="social-btn" title="Instagram" aria-label="Instagram"><img src="assets/icons/instagram_white.png" alt="Instagram"></a>
+                <a href="mailto:terrazademontana@gmail.com" target="_blank" class="social-btn" title="Email" aria-label="Email"><img src="assets/icons/email_white.png" alt="Email"></a>
             </div>
             <div class="powered-by">
                 <span>Powered By</span>
                 <a href="https://fmdcomputacion.com/">
-                    <img src="/assets/sponsors/fmdcomputacion.png" alt="FMDCOMPUTACION">
+                    <img src="assets/sponsors/fmdcomputacion.png" alt="FMDCOMPUTACION">
                 </a>
             </div>
         </div>

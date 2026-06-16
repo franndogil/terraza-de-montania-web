@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares y Actividades | Terraza de Montaña</title>
+    <link rel="stylesheet" href="css/leaflet.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/lugares.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="assets/images/logos/name.png" alt="Terraza de Montaña Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="alojamientos.html">Alojamientos</a></li>
+                <li><a href="lugares.html">La zona</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-wrap">
+
+        <!-- HERO -->
+        <section class="lug-hero">
+            <div class="lug-hero-overlay">
+                <p class="lug-hero-label">Qué hacer por la zona</p>
+                <h1 class="lug-hero-title">Lugares y actividades<br>en Traslasierra</h1>
+            </div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="lug-section">
+            <div class="lug-container">
+                <span class="lug-section-tag">El entorno</span>
+                <h2 class="lug-section-title">Explorá los alrededores</h2>
+                <p class="lug-lead">Desde Terraza de Montaña tenés acceso a algunos de los paisajes y destinos más hermosos del Valle de Traslasierra. Balnearios de río con aguas cristalinas, pueblos serranos con historia, museos únicos en el país y rutas de trekking por las sierras de Córdoba.</p>
+            </div>
+        </section>
+
+        <!-- MAP SECTION -->
+        <section class="lug-map-section">
+            <div class="lug-filters-wrap">
+                <div class="lug-container lug-container--wide">
+                    <div class="lug-filters">
+                        <button class="lug-filter active" data-cat="todos">Todos</button>
+                        <button class="lug-filter" data-cat="naturaleza">
+                            <span class="lug-dot lug-dot--naturaleza"></span>Naturaleza
+                        </button>
+                        <button class="lug-filter" data-cat="cultura">
+                            <span class="lug-dot lug-dot--cultura"></span>Cultura
+                        </button>
+                        <button class="lug-filter" data-cat="pueblos">
+                            <span class="lug-dot lug-dot--pueblos"></span>Pueblos cercanos
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="map">
+                <div class="map-fallback">
+                    <p>Cargando mapa...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLACES GRID -->
+        <section class="lug-section lug-places-section">
+            <div class="lug-container">
+                <div class="lug-grid" id="places-grid">
+
+                    <div class="lug-card" data-cat="naturaleza" data-index="0" data-lat="-31.5965" data-lng="-65.0482">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--naturaleza">Naturaleza</span>
+                            <span class="lug-distance">a metros</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Balneario Río Panaholma</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Aguas cristalinas en el segundo vado del río Panaholma. Ideal para nadar, descansar y disfrutar de la naturaleza a pasos del alojamiento.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.5965,-65.0482" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="naturaleza" data-index="1" data-lat="-31.590" data-lng="-65.058">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--naturaleza">Naturaleza</span>
+                            <span class="lug-distance">a pasos</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Senderos serranos</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Circuitos de senderismo por las sierras con vistas panorámicas al valle. Ideales para todos los niveles, en familia o en grupo.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.590,-65.058" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="pueblos" data-index="2" data-lat="-31.570" data-lng="-65.068">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--pueblos">Pueblos cercanos</span>
+                            <span class="lug-distance">4 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Las Rabonas</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Pintoresca localidad serrana en la quebrada del mismo nombre, conocida por sus paisajes de roca y vegetación nativa.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.570,-65.068" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="cultura" data-index="3" data-lat="-31.566" data-lng="-65.073">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--cultura">Cultura</span>
+                            <span class="lug-distance">5 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Túneles del Ferrocarril</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Antiguos túneles de la línea ferroviaria de Traslasierra, hoy un paseo histórico entre las rocas de la quebrada.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.566,-65.073" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="pueblos" data-index="4" data-lat="-31.656" data-lng="-65.081">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--pueblos">Pueblos cercanos</span>
+                            <span class="lug-distance">8 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Nono</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Pueblo artesanal y gastronómico de las sierras, con productos regionales, dulces artesanales y mercado de artesanías.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.656,-65.081" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="cultura" data-index="5" data-lat="-31.658" data-lng="-65.097">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--cultura">Cultura</span>
+                            <span class="lug-distance">9 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Museo Rocsen</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Uno de los museos más singulares de Argentina, con más de 30.000 piezas de colección. Una experiencia única en Nono.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.658,-65.097" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="pueblos" data-index="6" data-lat="-31.490" data-lng="-65.048">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--pueblos">Pueblos cercanos</span>
+                            <span class="lug-distance">12 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Villa Cura Brochero</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">Ciudad del primer santo argentino. Capilla con sus restos, termas naturales y una historia que vale la pena conocer.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.490,-65.048" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                    <div class="lug-card" data-cat="pueblos" data-index="7" data-lat="-31.728" data-lng="-65.003">
+                        <div class="lug-card-header">
+                            <span class="lug-cat-tag lug-cat-tag--pueblos">Pueblos cercanos</span>
+                            <span class="lug-distance">18 km</span>
+                        </div>
+                        <div class="lug-card-title-row">
+                            <h3 class="lug-card-title">Mina Clavero</h3>
+                            <svg class="lug-card-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="lug-card-body">
+                            <p class="lug-card-desc">La ciudad más importante del Valle de Traslasierra. Playas de río, gastronomía, shopping y entretenimiento para toda la familia.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-31.728,-65.003" target="_blank" class="lug-card-nav" onclick="event.stopPropagation()">Navegar</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="lug-cta-section">
+            <div class="lug-container">
+                <p class="lug-cta-text">¿Listo para explorar Traslasierra?</p>
+                <div class="lug-cta-buttons">
+                    <a href="alojamientos.html" class="lug-cta-btn">Ver alojamientos</a>
+                    <a href="contacto.html" class="lug-cta-btn lug-cta-btn--outline">Consultanos</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-links">
+                <div class="footer-links-group">
+                    <p class="footer-links-title">Contacto</p>
+                    <a href="nosotros.html">Quiénes somos</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                <div class="footer-links-group">
+                    <p class="footer-links-title">Ayuda</p>
+                    <a href="faqs.html">Preguntas frecuentes</a>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="https://wa.me/5491140273519" target="_blank" class="social-btn" title="WhatsApp"><img src="/assets/icons/whatsapp_white.png" alt="WhatsApp"></a>
+                <a href="https://instagram.com/terrazademontana" target="_blank" class="social-btn" title="Instagram"><img src="/assets/icons/instagram_white.png" alt="Instagram"></a>
+                <a href="mailto:terrazademontana@gmail.com" target="_blank" class="social-btn" title="Email"><img src="/assets/icons/email_white.png" alt="Email"></a>
+            </div>
+            <div class="powered-by">
+                <span>Powered By</span>
+                <a href="https://fmdcomputacion.com/">
+                    <img src="/assets/sponsors/fmdcomputacion.png" alt="FMDCOMPUTACION">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">
+                © 2026 Terraza de Montaña<br>
+                Panaholma, Córdoba, Argentina<br>
+                +54 9 11 4027-3519
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        // Filtros de categoría
+        document.querySelectorAll('.lug-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.lug-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const cat = btn.dataset.cat;
+                document.querySelectorAll('.lug-card').forEach(card => {
+                    const show = cat === 'todos' || card.dataset.cat === cat;
+                    card.style.display = show ? '' : 'none';
+                    if (!show) card.classList.remove('is-open');
+                });
+                if (window._lugMap) {
+                    window._lugMarkers.forEach(({ marker, mCat }) => {
+                        if (cat === 'todos' || mCat === cat) marker.addTo(window._lugMap);
+                        else window._lugMap.removeLayer(marker);
+                    });
+                }
+            });
+        });
+
+        // Tarjetas expandibles + interacción con el mapa
+        document.querySelectorAll('.lug-card').forEach(card => {
+            card.addEventListener('click', e => {
+                if (e.target.closest('.lug-card-body')) return;
+
+                const isOpen = card.classList.contains('is-open');
+
+                // Cerrar todas
+                document.querySelectorAll('.lug-card').forEach(c => c.classList.remove('is-open'));
+
+                if (!isOpen) {
+                    card.classList.add('is-open');
+
+                    // Mover el mapa al lugar
+                    const idx = parseInt(card.dataset.index);
+                    if (window._lugMap && window._lugMarkers && window._lugMarkers[idx]) {
+                        const marker = window._lugMarkers[idx].marker;
+                        window._lugMap.setView(marker.getLatLng(), 14, { animate: true });
+                        setTimeout(() => marker.openPopup(), 350);
+                    }
+
+                    // Scroll suave al mapa para que se vea
+                    document.querySelector('.lug-map-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Leaflet local + mapa -->
+    <script src="js/leaflet.min.js"></script>
+    <script>
+        if (typeof L !== 'undefined') {
+            const places = [
+                {
+                    name: "Balneario Río Panaholma",
+                    cat: "naturaleza", distance: "a metros",
+                    coords: [-31.5965, -65.0482],
+                    desc: "Aguas cristalinas en el segundo vado del río Panaholma. Ideal para nadar, descansar y disfrutar de la naturaleza a pasos del alojamiento."
+                },
+                {
+                    name: "Senderos serranos",
+                    cat: "naturaleza", distance: "a pasos",
+                    coords: [-31.590, -65.058],
+                    desc: "Circuitos de senderismo por las sierras con vistas panorámicas al valle. Ideales para todos los niveles, en familia o en grupo."
+                },
+                {
+                    name: "Las Rabonas",
+                    cat: "pueblos", distance: "4 km",
+                    coords: [-31.570, -65.068],
+                    desc: "Pintoresca localidad serrana en la quebrada del mismo nombre, conocida por sus paisajes de roca y vegetación nativa."
+                },
+                {
+                    name: "Túneles del Ferrocarril",
+                    cat: "cultura", distance: "5 km",
+                    coords: [-31.566, -65.073],
+                    desc: "Antiguos túneles de la línea ferroviaria de Traslasierra, hoy un paseo histórico entre las rocas de la quebrada."
+                },
+                {
+                    name: "Nono",
+                    cat: "pueblos", distance: "8 km",
+                    coords: [-31.656, -65.081],
+                    desc: "Pueblo artesanal y gastronómico de las sierras, con productos regionales, dulces artesanales y mercado de artesanías."
+                },
+                {
+                    name: "Museo Rocsen",
+                    cat: "cultura", distance: "9 km",
+                    coords: [-31.658, -65.097],
+                    desc: "Uno de los museos más singulares de Argentina, con más de 30.000 piezas de colección. Una experiencia única en Nono."
+                },
+                {
+                    name: "Villa Cura Brochero",
+                    cat: "pueblos", distance: "12 km",
+                    coords: [-31.490, -65.048],
+                    desc: "Ciudad del primer santo argentino. Capilla con sus restos, termas naturales y una historia que vale la pena conocer."
+                },
+                {
+                    name: "Mina Clavero",
+                    cat: "pueblos", distance: "18 km",
+                    coords: [-31.728, -65.003],
+                    desc: "La ciudad más importante del Valle de Traslasierra. Playas de río, gastronomía, shopping y entretenimiento para toda la familia."
+                }
+            ];
+
+            const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f' };
+            const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos' };
+
+            const HOME = [-31.5960346, -65.0493451];
+
+            const map = L.map('map', { scrollWheelZoom: false }).setView(HOME, 12);
+            window._lugMap = map;
+            window._lugMarkers = [];
+
+            // CartoDB Voyager — mapa colorido y moderno, gratis
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                maxZoom: 19,
+                subdomains: 'abcd'
+            }).addTo(map);
+
+            // Marcador del alojamiento
+            const homeIcon = L.divIcon({
+                className: '',
+                html: '<div class="map-marker map-marker--home"></div>',
+                iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -13]
+            });
+            const homePopup =
+                '<div class="lug-popup">' +
+                '<p class="lug-popup-cat" style="color:#771a1c">Tu alojamiento</p>' +
+                '<h3 class="lug-popup-title">Terraza de Montaña</h3>' +
+                '<p class="lug-popup-desc">Cabaña en Los Morteritos, Panaholma. Junto al segundo vado del río.</p>' +
+                `<a href="https://www.google.com/maps/dir/?api=1&destination=${HOME[0]},${HOME[1]}" target="_blank" class="lug-popup-nav">Navegar</a>` +
+                '</div>';
+            L.marker(HOME, { icon: homeIcon })
+                .bindPopup(homePopup, { maxWidth: 260 })
+                .bindTooltip('Terraza de Montaña', { permanent: true, direction: 'right', offset: [10, 0], className: 'map-label map-label--home' })
+                .addTo(map);
+
+            // Marcadores de lugares
+            places.forEach(p => {
+                const color = catColors[p.cat];
+                const icon = L.divIcon({
+                    className: '',
+                    html: `<div class="map-marker" style="background:${color};box-shadow:0 0 0 3px #fff,0 1px 6px rgba(0,0,0,.3)"></div>`,
+                    iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -11]
+                });
+                const popupHtml =
+                    '<div class="lug-popup">' +
+                    `<div class="lug-popup-head"><span class="lug-popup-cat" style="color:${color}">${catLabels[p.cat]}</span><span class="lug-popup-dist">${p.distance}</span></div>` +
+                    `<h3 class="lug-popup-title">${p.name}</h3>` +
+                    `<p class="lug-popup-desc">${p.desc}</p>` +
+                    `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.coords[0]},${p.coords[1]}" target="_blank" class="lug-popup-nav">Navegar</a>` +
+                    '</div>';
+                const marker = L.marker(p.coords, { icon })
+                    .bindPopup(popupHtml, { maxWidth: 260 })
+                    .bindTooltip(p.name, { permanent: true, direction: 'right', offset: [9, 0], className: 'map-label' })
+                    .addTo(map);
+                window._lugMarkers.push({ marker, mCat: p.cat });
+            });
+        } else {
+            document.getElementById('map').innerHTML =
+                '<div class="map-fallback map-fallback--error">' +
+                '<p>El mapa no pudo cargar.</p>' +
+                '</div>';
+        }
+    </script>
+</body>
+</html>
