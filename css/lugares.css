@@ -153,27 +153,30 @@
     color: #771a1c;
 }
 
-/* Etiquetas de los marcadores */
-.map-label {
-    background: rgba(255,255,255,0.92) !important;
-    border: none !important;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.18) !important;
-    border-radius: 4px !important;
-    padding: 3px 8px !important;
-    font-family: 'MontserratCustom', sans-serif !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    color: #222 !important;
-    white-space: nowrap !important;
-    pointer-events: none !important;
+/* Contenedor del marcador (punto + etiqueta) */
+.map-marker-wrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.map-label::before {
-    display: none !important;
+/* Etiquetas permanentes de los marcadores */
+.map-label {
+    margin-left: 6px;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.18);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: 'MontserratCustom', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #222;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 .map-label--home {
-    color: #771a1c !important;
+    color: #771a1c;
 }
 
 /* Marcadores del mapa */
@@ -416,8 +419,21 @@
     text-decoration: none !important;
 }
 
-/* Override estilos por defecto de Leaflet en links */
-.leaflet-popup-content a.lug-popup-nav { color: #fff !important; }
+/* Override estilos por defecto de MapLibre en links */
+.maplibregl-popup-content a.lug-popup-nav { color: #fff !important; }
+
+/* Ajustes del popup de MapLibre */
+.maplibregl-popup-content {
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.maplibregl-popup-close-button {
+    font-size: 1.1rem;
+    color: #999;
+    padding: 0 6px;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

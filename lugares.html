@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lugares y Actividades | Terraza de Montaña</title>
-    <link rel="stylesheet" href="css/leaflet.min.css">
+    <link rel="stylesheet" href="css/maplibre-gl.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/lugares.css">
 </head>
@@ -262,8 +262,8 @@
                 });
                 if (window._lugMap) {
                     window._lugMarkers.forEach(({ marker, mCat }) => {
-                        if (cat === 'todos' || mCat === cat) marker.addTo(window._lugMap);
-                        else window._lugMap.removeLayer(marker);
+                        const show = cat === 'todos' || mCat === cat;
+                        marker.getElement().style.display = show ? '' : 'none';
                     });
                 }
             });
@@ -286,8 +286,10 @@
                     const idx = parseInt(card.dataset.index);
                     if (window._lugMap && window._lugMarkers && window._lugMarkers[idx]) {
                         const marker = window._lugMarkers[idx].marker;
-                        window._lugMap.setView(marker.getLatLng(), 14, { animate: true });
-                        setTimeout(() => marker.openPopup(), 350);
+                        window._lugMap.flyTo({ center: marker.getLngLat(), zoom: 14 });
+                        setTimeout(() => {
+                            if (!marker.getPopup().isOpen()) marker.togglePopup();
+                        }, 350);
                     }
 
                     // Scroll suave al mapa para que se vea
@@ -297,57 +299,119 @@
         });
     </script>
 
-    <!-- Leaflet local + mapa -->
-    <script src="js/leaflet.min.js"></script>
+    <!-- MapLibre GL local + mapa -->
+    <script src="js/maplibre-gl.js"></script>
     <script>
-        if (typeof L !== 'undefined') {
+        if (typeof maplibregl !== 'undefined') {
             const places = [
                 {
-                    name: "Balneario Río Panaholma",
+                    name: "Segundo vado del río Panaholma",
                     cat: "naturaleza", distance: "a metros",
-                    coords: [-31.5965, -65.0482],
+                    coords: [-31.603519, -65.047143],
                     desc: "Aguas cristalinas en el segundo vado del río Panaholma. Ideal para nadar, descansar y disfrutar de la naturaleza a pasos del alojamiento."
                 },
                 {
-                    name: "Senderos serranos",
-                    cat: "naturaleza", distance: "a pasos",
-                    coords: [-31.590, -65.058],
-                    desc: "Circuitos de senderismo por las sierras con vistas panorámicas al valle. Ideales para todos los niveles, en familia o en grupo."
+                    name: "Primer vado del río Panaholma",
+                    cat: "naturaleza", distance: "5 km",
+                    coords: [-31.634995, -65.054136],
+                    desc: "Aguas cristalinas en el primer vado del río Panaholma. Ideal para nadar, descansar y disfrutar de la naturaleza a unos kilómetros del alojamiento."
                 },
                 {
                     name: "Las Rabonas",
                     cat: "pueblos", distance: "4 km",
-                    coords: [-31.570, -65.068],
+                    coords: [-31.870138, -64.980705],
                     desc: "Pintoresca localidad serrana en la quebrada del mismo nombre, conocida por sus paisajes de roca y vegetación nativa."
                 },
                 {
-                    name: "Túneles del Ferrocarril",
+                    name: "Dique La Viña",
+                    cat: "naturaleza",
+                    distance: "8 km",
+                    coords: [-31.870775, -65.035016],
+                    desc: "Imponente embalse de Traslasierra con el paredón más alto de Argentina. Sus vistas panorámicas, aguas cristalinas y actividades como pesca, kayak y navegación lo convierten en uno de los principales atractivos de la región."
+                },
+                {
+                    name: "Panaholma",
                     cat: "cultura", distance: "5 km",
-                    coords: [-31.566, -65.073],
+                    coords: [-31.632933, -65.054981],
+                    desc: "Un tranquilo pueblo serrano atravesado por el río Panaholma, famoso por sus aguas cristalinas, playas de arena y paisajes ideales para descansar en plena naturaleza."
+                },
+                {
+                    name: "Las Maravillas",
+                    cat: "naturaleza",
+                    distance: "12 km",
+                    coords: [-31.659964, -65.032035],
+                    desc: "Balneario natural de aguas cristalinas rodeado de sierras y vegetación autóctona. Sus playas de arena, ollas naturales y paisajes tranquilos lo convierten en un lugar ideal para relajarse y disfrutar del río."
+                },
+                {
+                    name: "Túneles de Taninga",
+                    cat: "cultura", distance: "70 km",
+                    coords: [-31.375252, -65.391603],
                     desc: "Antiguos túneles de la línea ferroviaria de Traslasierra, hoy un paseo histórico entre las rocas de la quebrada."
                 },
                 {
                     name: "Nono",
-                    cat: "pueblos", distance: "8 km",
-                    coords: [-31.656, -65.081],
+                    cat: "pueblos", distance: "30 km",
+                    coords: [-31.797249, -65.002632],
                     desc: "Pueblo artesanal y gastronómico de las sierras, con productos regionales, dulces artesanales y mercado de artesanías."
                 },
                 {
+                    name: "El Laberinto de Nono",
+                    cat: "recreacion",
+                    distance: "32 km",
+                    coords: [-31.8198994, -64.9992897],
+                    desc: "Divertido atractivo para toda la familia, con un gran laberinto natural rodeado de vegetación serrana. Un espacio ideal para recorrer, jugar y disfrutar de una experiencia diferente en Traslasierra."
+                },
+                {
                     name: "Museo Rocsen",
-                    cat: "cultura", distance: "9 km",
-                    coords: [-31.658, -65.097],
+                    cat: "cultura", distance: "35 km",
+                    coords: [-31.799614, -64.956542],
                     desc: "Uno de los museos más singulares de Argentina, con más de 30.000 piezas de colección. Una experiencia única en Nono."
                 },
                 {
+                    name: "Cascada de La Gloria",
+                    cat: "naturaleza",
+                    distance: "25 km",
+                    coords: [-31.730223, -65.063803],
+                    desc: "Hermosa cascada escondida entre las sierras de Villa Cura Brochero, ideal para quienes buscan una caminata corta y un entorno natural con aguas cristalinas, rocas y una vista única."
+                },
+                {
+                    name: "Ambul",
+                    cat: "pueblos",
+                    distance: "18 km",
+                    coords: [-31.490605, -65.053954],
+                    desc: "Tradicional pueblo de Traslasierra rodeado de sierras y naturaleza, reconocido por su tranquilidad, su patrimonio histórico y su cercanía a senderos y paisajes ideales para el turismo rural."
+                },
+                {
+                    name: "San Lorenzo",
+                    cat: "pueblos",
+                    distance: "15 km",
+                    coords: [-31.667468, -65.023373],
+                    desc: "Encantador pueblo de Traslasierra rodeado por el río Panaholma y el arroyo Toro Muerto. Sus balnearios, senderos y paisajes serranos lo convierten en un destino ideal para disfrutar de la naturaleza y la tranquilidad."
+                },
+                {
                     name: "Villa Cura Brochero",
-                    cat: "pueblos", distance: "12 km",
-                    coords: [-31.490, -65.048],
+                    cat: "pueblos", distance: "23 km",
+                    coords: [-31.706330, -65.018565],
                     desc: "Ciudad del primer santo argentino. Capilla con sus restos, termas naturales y una historia que vale la pena conocer."
+                },
+                {
+                    name: "Santuario del Cura Brochero",
+                    cat: "cultura",
+                    distance: "23 km",
+                    coords: [-31.7057878, -65.0186156],
+                    desc: "Importante sitio de peregrinación dedicado a San José Gabriel del Rosario Brochero. Este santuario invita a conocer la historia del primer santo argentino y su legado en el corazón de Traslasierra."
+                },
+                {
+                    name: "Balneario Nido del Águila",
+                    cat: "naturaleza",
+                    distance: "27 km",
+                    coords: [-31.725390, -64.992491],
+                    desc: "Uno de los balnearios más emblemáticos de Traslasierra, reconocido por sus aguas cristalinas, profundas ollas naturales y paredes de roca que crean un paisaje único para disfrutar del río y la naturaleza."
                 },
                 {
                     name: "Mina Clavero",
                     cat: "pueblos", distance: "18 km",
-                    coords: [-31.728, -65.003],
+                    coords: [-31.729936, -65.005006],
                     desc: "La ciudad más importante del Valle de Traslasierra. Playas de río, gastronomía, shopping y entretenimiento para toda la familia."
                 }
             ];
@@ -355,25 +419,47 @@
             const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f' };
             const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos' };
 
+            // MapLibre usa [lng, lat]; guardamos coords como [lat, lng] para los links de Google
             const HOME = [-31.5960346, -65.0493451];
+            const toLngLat = c => [c[1], c[0]];
 
-            const map = L.map('map', { scrollWheelZoom: false }).setView(HOME, 12);
+            const mapEl = document.getElementById('map');
+            mapEl.innerHTML = '';
+
+            const map = new maplibregl.Map({
+                container: 'map',
+                // CartoDB Dark Matter — estilo vectorial oscuro y minimalista, gratis (sobre OpenStreetMap)
+                style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+                center: toLngLat(HOME),
+                zoom: 11,
+                scrollZoom: false,
+                attributionControl: false
+            });
             window._lugMap = map;
             window._lugMarkers = [];
 
-            // CartoDB Voyager — mapa colorido y moderno, gratis
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-                maxZoom: 19,
-                subdomains: 'abcd'
-            }).addTo(map);
+            map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+            map.addControl(new maplibregl.AttributionControl({
+                compact: true,
+                customAttribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }));
+
+            // Crea el elemento del marcador: punto + etiqueta permanente a la derecha
+            function buildMarkerEl(dotClass, dotStyle, label, labelClass) {
+                const wrap = document.createElement('div');
+                wrap.className = 'map-marker-wrap';
+                const dot = document.createElement('div');
+                dot.className = dotClass;
+                if (dotStyle) dot.setAttribute('style', dotStyle);
+                const tag = document.createElement('span');
+                tag.className = labelClass;
+                tag.textContent = label;
+                wrap.appendChild(dot);
+                wrap.appendChild(tag);
+                return wrap;
+            }
 
             // Marcador del alojamiento
-            const homeIcon = L.divIcon({
-                className: '',
-                html: '<div class="map-marker map-marker--home"></div>',
-                iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -13]
-            });
             const homePopup =
                 '<div class="lug-popup">' +
                 '<p class="lug-popup-cat" style="color:#771a1c">Tu alojamiento</p>' +
@@ -381,19 +467,19 @@
                 '<p class="lug-popup-desc">Cabaña en Los Morteritos, Panaholma. Junto al segundo vado del río.</p>' +
                 `<a href="https://www.google.com/maps/dir/?api=1&destination=${HOME[0]},${HOME[1]}" target="_blank" class="lug-popup-nav">Navegar</a>` +
                 '</div>';
-            L.marker(HOME, { icon: homeIcon })
-                .bindPopup(homePopup, { maxWidth: 260 })
-                .bindTooltip('Terraza de Montaña', { permanent: true, direction: 'right', offset: [10, 0], className: 'map-label map-label--home' })
+            new maplibregl.Marker({
+                    element: buildMarkerEl('map-marker map-marker--home', '', 'Terraza de Montaña', 'map-label map-label--home'),
+                    anchor: 'left',
+                    offset: [-9, 0] // radio del punto (18px) para centrarlo en la coordenada
+                })
+                .setLngLat(toLngLat(HOME))
+                .setPopup(new maplibregl.Popup({ offset: 14, maxWidth: '260px' }).setHTML(homePopup))
                 .addTo(map);
 
             // Marcadores de lugares
             places.forEach(p => {
                 const color = catColors[p.cat];
-                const icon = L.divIcon({
-                    className: '',
-                    html: `<div class="map-marker" style="background:${color};box-shadow:0 0 0 3px #fff,0 1px 6px rgba(0,0,0,.3)"></div>`,
-                    iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -11]
-                });
+                const dotStyle = `background:${color};box-shadow:0 0 0 3px #fff,0 1px 6px rgba(0,0,0,.3)`;
                 const popupHtml =
                     '<div class="lug-popup">' +
                     `<div class="lug-popup-head"><span class="lug-popup-cat" style="color:${color}">${catLabels[p.cat]}</span><span class="lug-popup-dist">${p.distance}</span></div>` +
@@ -401,9 +487,13 @@
                     `<p class="lug-popup-desc">${p.desc}</p>` +
                     `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.coords[0]},${p.coords[1]}" target="_blank" class="lug-popup-nav">Navegar</a>` +
                     '</div>';
-                const marker = L.marker(p.coords, { icon })
-                    .bindPopup(popupHtml, { maxWidth: 260 })
-                    .bindTooltip(p.name, { permanent: true, direction: 'right', offset: [9, 0], className: 'map-label' })
+                const marker = new maplibregl.Marker({
+                        element: buildMarkerEl('map-marker', dotStyle, p.name, 'map-label'),
+                        anchor: 'left',
+                        offset: [-7, 0] // radio del punto (14px) para centrarlo en la coordenada
+                    })
+                    .setLngLat(toLngLat(p.coords))
+                    .setPopup(new maplibregl.Popup({ offset: 12, maxWidth: '260px' }).setHTML(popupHtml))
                     .addTo(map);
                 window._lugMarkers.push({ marker, mCat: p.cat });
             });
