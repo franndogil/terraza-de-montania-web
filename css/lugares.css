@@ -130,7 +130,8 @@
 
 #map {
     width: 100%;
-    height: 520px;
+    height: 85vh;
+    min-height: 600px;
 }
 
 /* Fallback cuando el mapa no carga */
@@ -191,127 +192,6 @@
     height: 18px;
     background: #771a1c;
     box-shadow: 0 0 0 3px #fff, 0 1px 6px rgba(0,0,0,.35);
-}
-
-/* PLACES GRID */
-.lug-places-section {
-    padding-top: 4rem;
-}
-
-.lug-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
-    align-items: start;
-}
-
-.lug-card {
-    background: #fff;
-    border-radius: 6px;
-    padding: 1.25rem 1.5rem;
-    border: 1px solid rgba(0,0,0,0.08);
-    cursor: pointer;
-    transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.lug-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.09);
-    border-color: rgba(119,26,28,0.2);
-}
-
-.lug-card.is-open {
-    border-color: rgba(119,26,28,0.3);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.lug-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.6rem;
-}
-
-.lug-card-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.lug-card-chevron {
-    color: #bbb;
-    flex-shrink: 0;
-    transition: transform 0.3s ease, color 0.2s;
-}
-
-.lug-card.is-open .lug-card-chevron {
-    transform: rotate(180deg);
-    color: #771a1c;
-}
-
-.lug-card-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding-top 0.35s ease;
-}
-
-.lug-card.is-open .lug-card-body {
-    max-height: 220px;
-    padding-top: 0.85rem;
-}
-
-.lug-card-nav {
-    display: inline-block;
-    background: #771a1c;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.45rem 1.25rem;
-    border-radius: 4px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    margin-top: 0.75rem;
-    transition: background 0.2s;
-}
-
-.lug-card-nav:hover {
-    background: #5a1315;
-    color: #fff;
-    text-decoration: none;
-}
-
-.lug-cat-tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
-    color: #fff;
-}
-
-.lug-cat-tag--naturaleza { background: #3a7d44; }
-.lug-cat-tag--cultura    { background: #c77b2e; }
-.lug-cat-tag--pueblos    { background: #2d6a9f; }
-
-.lug-distance {
-    font-size: 0.78rem;
-    color: #999;
-    font-weight: 600;
-}
-
-.lug-card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #222;
-    margin: 0;
-    flex: 1;
-}
-
-.lug-card-desc {
-    font-size: 0.87rem;
-    line-height: 1.75;
-    color: #555 !important;
-    margin: 0;
 }
 
 /* CTA */
@@ -463,11 +343,8 @@
     }
 
     #map {
-        height: 380px;
-    }
-
-    .lug-grid {
-        grid-template-columns: 1fr;
+        height: 70vh;
+        min-height: 420px;
     }
 
     .lug-cta-section {
