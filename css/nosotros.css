@@ -1,7 +1,11 @@
+/* ============================================================
+   NOSOTROS
+   ============================================================ */
+
 /* ── HERO ─────────────────────────────────────────────────── */
 .nos-hero {
-    height: 65vh;
-    min-height: 400px;
+    height: 68vh;
+    min-height: 420px;
     background-image: url('../assets/images/house-1/14.jpeg');
     background-size: cover;
     background-position: center;
@@ -12,116 +16,112 @@
 
 .nos-hero-overlay {
     width: 100%;
-    padding: 4rem 10%;
-    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    padding: 4rem 8%;
+    background: linear-gradient(to top, rgba(40,15,10,0.75) 0%, transparent 100%);
     color: #fff;
 }
 
 .nos-hero-label {
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: #fbd5b2;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
+    color: var(--salmon);
 }
 
 .nos-hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-weight: 400;
     margin: 0;
-    line-height: 1.15;
+    line-height: 1.12;
     color: #fff;
+    text-shadow: 0 3px 24px rgba(0,0,0,0.35);
 }
 
-/* ── SHARED SECTION STYLES ───────────────────────────────── */
-.nos-section {
-    padding: 5rem 0;
-}
+/* ── SECCIONES ───────────────────────────────────────────── */
+.nos-section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
 
 .nos-container {
-    width: 80%;
-    max-width: 1100px;
+    width: min(1100px, 88%);
     margin: 0 auto;
 }
 
 .section-tag {
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.22em;
     font-size: 0.72rem;
     font-weight: 700;
-    color: #771a1c;
-    margin-bottom: 0.75rem;
+    color: var(--bordo);
+    margin-bottom: 0.9rem;
 }
-
-.section-tag--light {
-    color: #fbd5b2;
-}
+.section-tag--light { color: var(--salmon); }
 
 .section-title {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 700;
-    color: #333;
+    font-family: var(--font-head);
+    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+    font-weight: 400;
+    color: var(--bordo);
     margin: 0 0 2rem;
-    line-height: 1.2;
+    line-height: 1.18;
 }
+.section-title--light { color: #fff; }
 
-.section-title--light {
-    color: #fff;
-}
-
-/* ── TEXT ─────────────────────────────────────────────────── */
+/* ── TEXTO ────────────────────────────────────────────────── */
 .nos-text p {
-    font-size: 1rem;
-    line-height: 1.85;
-    color: #444;
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--muted);
     margin: 0 0 1.25rem;
     max-width: 70ch;
 }
 
-.nos-text--cols {
-    columns: 2;
-    gap: 3rem;
-}
+.nos-text--cols { columns: 2; gap: 3rem; }
+.nos-text--cols p { max-width: none; break-inside: avoid; }
 
-.nos-text--cols p {
-    max-width: none;
-    break-inside: avoid;
-}
-
-/* ── DARK SECTION (ANFITRIONES) ─────────────────────────── */
-.nos-dark-section {
-    background: #771a1c;
-}
+/* ── SECCIÓN OSCURA (ANFITRIONES) ────────────────────────── */
+.nos-dark-section { background: var(--bordo); }
 
 .nos-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
 }
 
+.nos-split-image { position: relative; }
 .nos-split-image img {
     width: 100%;
     height: 480px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: var(--radius);
     display: block;
+    box-shadow: var(--shadow);
+}
+.nos-split-image::before {
+    content: '';
+    position: absolute;
+    inset: -16px 16px 16px -16px;
+    border: 2px solid rgba(251, 213, 178, 0.5);
+    border-radius: var(--radius);
+    z-index: 0;
 }
 
 .nos-split-text p {
-    font-size: 1rem;
-    line-height: 1.85;
-    color: #fbd5b2;
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--salmon);
     margin: 0 0 1.25rem;
+    opacity: 0.92;
 }
 
-/* ── FEATURE SECTION (FILOSOFÍA) ─────────────────────────── */
+/* ── FILOSOFÍA ───────────────────────────────────────────── */
 .nos-lead {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.85;
-    color: #444;
+    color: var(--muted);
     max-width: 65ch;
     margin: 0 0 3rem;
 }
@@ -129,50 +129,57 @@
 .nos-values {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.6rem;
 }
 
 .nos-value-card {
-    border-top: 3px solid #771a1c;
-    padding-top: 1.5rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.nos-value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
 .nos-value-num {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #771a1c;
-    opacity: 0.2;
+    font-family: var(--font-head);
+    font-size: 2.6rem;
+    font-weight: 400;
+    color: var(--bordo);
+    opacity: 0.35;
     line-height: 1;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
 }
 
 .nos-value-card h3 {
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin: 0 0 0.6rem;
-    color: #333;
+    color: var(--ink);
 }
 
 .nos-value-card p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     line-height: 1.75;
-    color: #555;
+    color: var(--muted);
     margin: 0;
 }
 
-/* ── QUOTE ─────────────────────────────────────────────────── */
+/* ── QUOTE ────────────────────────────────────────────────── */
 .nos-quote-section {
-    padding: 5rem 0;
-    border-top: 1px solid rgba(119,26,28,0.15);
-    border-bottom: 1px solid rgba(119,26,28,0.15);
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--salmon-soft);
 }
 
 .nos-quote {
+    font-family: var(--font-head);
     font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 700;
-    color: #771a1c;
+    font-weight: 400;
+    color: var(--bordo);
     text-align: center;
     margin: 0;
     line-height: 1.3;
@@ -181,13 +188,14 @@
 
 /* ── CTA ──────────────────────────────────────────────────── */
 .nos-cta-section {
-    padding: 5rem 0;
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
     text-align: center;
 }
 
 .nos-cta-section p {
-    font-size: 1.1rem;
-    color: #555;
+    font-family: var(--font-head);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--bordo);
     margin: 0 0 2rem;
 }
 
@@ -200,71 +208,34 @@
 
 .nos-cta-btn {
     display: inline-block;
-    background: #771a1c;
-    color: #fbd5b2;
+    background: var(--bordo);
+    color: var(--salmon);
     text-decoration: none;
-    padding: 0.85rem 2.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: background 0.2s;
+    padding: 0.9rem 2.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 10px 26px rgba(119, 26, 28, 0.22);
+    transition: background 0.25s ease, transform 0.25s ease;
 }
-
-.nos-cta-btn:hover {
-    background: #5a1315;
-    color: #fbd5b2;
-}
+.nos-cta-btn:hover { background: var(--bordo-dark); transform: translateY(-3px); color: var(--salmon); }
 
 .nos-cta-btn--outline {
     background: transparent;
-    border: 2px solid #771a1c;
-    color: #771a1c;
+    border: 2px solid var(--bordo);
+    color: var(--bordo);
+    box-shadow: none;
 }
+.nos-cta-btn--outline:hover { background: var(--bordo); color: var(--salmon); }
 
-.nos-cta-btn--outline:hover {
-    background: #771a1c;
-    color: #fbd5b2;
-}
-
-/* ── RESPONSIVE ─────────────────────────────────────────────── */
+/* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-    .nos-hero {
-        height: 55vh;
-    }
-
-    .nos-hero-overlay {
-        padding: 3rem 5%;
-    }
-
-    .nos-section {
-        padding: 3.5rem 0;
-    }
-
-    .nos-container {
-        width: 90%;
-    }
-
-    .nos-text--cols {
-        columns: 1;
-    }
-
-    .nos-split {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .nos-split-image img {
-        height: 260px;
-    }
-
-    .nos-values {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .nos-quote-section,
-    .nos-cta-section {
-        padding: 3.5rem 0;
-    }
+    .nos-hero { height: 58vh; }
+    .nos-hero-overlay { padding: 3rem 6%; }
+    .nos-container { width: 90%; }
+    .nos-text--cols { columns: 1; }
+    .nos-split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nos-split-image img { height: 300px; }
+    .nos-split-image::before { inset: -10px 10px 10px -10px; }
+    .nos-values { grid-template-columns: 1fr; gap: 1.25rem; }
 }

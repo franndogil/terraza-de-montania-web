@@ -2,14 +2,14 @@
 :root {
     --brand-red:  #771a1c;
     --brand-bg:   #fbd5b2;
-    --text-dark:  #111827;
-    --text-mid:   #4b5563;
-    --text-light: #9ca3af;
-    --border:     #e5e7eb;
+    --text-dark:  #2b2320;
+    --text-mid:   #5c534d;
+    --text-light: #9c8f86;
+    --border:     #ece2d8;
     --white:      #ffffff;
     --radius-sm:  8px;
     --radius-md:  12px;
-    --radius-lg:  16px;
+    --radius-lg:  18px;
 }
 
 /* ── BREADCRUMB ────────────────────────────────────────────────── */
@@ -197,11 +197,12 @@
 }
 
 .listing-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-dark);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    color: var(--brand-red);
     margin: 0 0 16px;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .listing-stats {
@@ -226,8 +227,8 @@
 /* ── SEPARADOR ─────────────────────────────────────────────────── */
 .listing-divider {
     border: none;
-    border-top: 1px solid var(--brand-red);
-    margin: 24px 0;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
 }
 
 /* ── DESCRIPCIÓN ───────────────────────────────────────────────── */
@@ -244,10 +245,11 @@
 
 /* ── TÍTULO DE SECCIÓN ─────────────────────────────────────────── */
 .listing-section-title {
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin: 0 0 16px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--brand-red);
+    margin: 0 0 20px;
 }
 
 /* ── AMENITIES ─────────────────────────────────────────────────── */
@@ -260,14 +262,20 @@
 .amenity {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-size: 14px;
-    color: var(--text-mid);
+    color: var(--text-dark);
 }
 
 .amenity svg {
     color: var(--brand-red);
     flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    padding: 8px;
+    box-sizing: content-box;
+    background: var(--brand-bg);
+    border-radius: 10px;
 }
 
 /* ── TAGS ──────────────────────────────────────────────────────── */
@@ -317,9 +325,10 @@
 }
 
 .contact-card__title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-dark);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--brand-red);
     margin: 0 0 4px;
 }
 

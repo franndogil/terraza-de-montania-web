@@ -1,7 +1,11 @@
-/* Hero */
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+
+/* ── HERO ────────────────────────────────────────────────── */
 .contact-hero {
     width: 100%;
-    height: 280px;
+    height: 340px;
     background-image: url('../assets/images/terraza-hero.png');
     background-size: cover;
     background-position: center;
@@ -11,7 +15,7 @@
 .contact-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(119, 26, 28, 0.55);
+    background: linear-gradient(to bottom, rgba(119,26,28,0.45), rgba(60,20,15,0.72));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,120 +26,101 @@
 }
 
 .contact-hero-overlay h1 {
+    font-family: var(--font-head);
     color: #fff;
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 400;
     margin: 0;
-    letter-spacing: 0.03em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    text-shadow: 0 3px 18px rgba(0,0,0,0.35);
 }
 
 .contact-hero-overlay p {
-    color: #fbd5b2;
+    color: var(--salmon);
     font-size: 1.1rem;
     margin: 0;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
 
-/* Cards section */
-.contact-section {
-    padding: 3.5rem 0 4rem;
-}
+/* ── CARDS ───────────────────────────────────────────────── */
+.contact-section { padding: clamp(3.5rem, 8vw, 5.5rem) 0; }
 
-.contact-section .container {
-    overflow: visible;
+.contact-intro {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 3rem;
 }
+.contact-intro h2 {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--bordo);
+    margin: 0 0 0.6rem;
+}
+.contact-intro p { color: var(--muted); margin: 0; }
 
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 0.75rem 0.5rem 1rem;
+    gap: 1.8rem;
 }
 
 .contact-card {
     background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(119, 26, 28, 0.1);
-    padding: 2.5rem 1.5rem 2rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 2.75rem 1.5rem 2.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(119, 26, 28, 0.18);
+    box-shadow: var(--shadow);
 }
 
 .card-icon {
-    width: 72px;
-    height: 72px;
-    background-color: #771a1c;
+    width: 74px;
+    height: 74px;
+    background-color: var(--bordo);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 }
-
 .contact-card:hover .card-icon {
-    background-color: #9e2224;
+    background-color: var(--bordo-light);
+    transform: scale(1.06);
 }
-
-.card-icon img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-}
+.card-icon img { width: 34px; height: 34px; object-fit: contain; }
 
 .contact-card h3 {
-    font-size: 1.15rem;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
     font-weight: 700;
-    color: #771a1c;
+    color: var(--bordo);
     margin: 0;
     text-align: center;
 }
 
 .contact-card span {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--muted);
     text-align: center;
-    word-break: break-all;
+    word-break: break-word;
     line-height: 1.5;
 }
 
-/* Responsive */
+/* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 900px) {
-    .contact-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .contact-cards { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 580px) {
-    .contact-hero {
-        height: 220px;
-    }
-
-    .contact-hero-overlay h1 {
-        font-size: 2rem;
-    }
-
-    .contact-hero-overlay p {
-        font-size: 0.95rem;
-    }
-
-    .contact-cards {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-    }
-
-    .contact-section {
-        padding: 2.5rem 0 3rem;
-    }
+    .contact-hero { height: 260px; }
+    .contact-cards { grid-template-columns: 1fr; gap: 1.25rem; }
 }
