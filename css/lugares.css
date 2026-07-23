@@ -127,6 +127,7 @@
 .lug-dot--naturaleza { background: #3a7d44; }
 .lug-dot--cultura    { background: #c77b2e; }
 .lug-dot--pueblos    { background: #2d6a9f; }
+.lug-dot--recreacion { background: #9c3a7d; }
 
 #map {
     width: 100%;

@@ -59,6 +59,9 @@
                         <button class="lug-filter" data-cat="pueblos">
                             <span class="lug-dot lug-dot--pueblos"></span>Pueblos cercanos
                         </button>
+                        <button class="lug-filter" data-cat="recreacion">
+                            <span class="lug-dot lug-dot--recreacion"></span>Recreación
+                        </button>
                     </div>
                 </div>
             </div>
@@ -193,7 +196,7 @@
                 },
                 {
                     name: "El Laberinto de Nono",
-                    cat: "recreacion",
+                    cat: "cultura",
                     distance: "32 km",
                     coords: [-31.8198994, -64.9992897],
                     desc: "Divertido atractivo para toda la familia, con un gran laberinto natural rodeado de vegetación serrana. Un espacio ideal para recorrer, jugar y disfrutar de una experiencia diferente en Traslasierra."
@@ -232,6 +235,13 @@
                     desc: "Ciudad del primer santo argentino. Capilla con sus restos, termas naturales y una historia que vale la pena conocer."
                 },
                 {
+                    name: "Museo Brocheriano",
+                    cat: "cultura",
+                    distance: "23 km",
+                    coords: [-31.705877, -65.0189813],
+                    desc: "Museo dedicado a la vida y obra de San José Gabriel del Rosario Brochero. A través de objetos personales, documentos y exposiciones, permite conocer el legado del primer santo argentino y su impacto en Traslasierra."
+                },
+                {
                     name: "Santuario del Cura Brochero",
                     cat: "cultura",
                     distance: "23 km",
@@ -250,11 +260,194 @@
                     cat: "pueblos", distance: "18 km",
                     coords: [-31.729936, -65.005006],
                     desc: "La ciudad más importante del Valle de Traslasierra. Playas de río, gastronomía, shopping y entretenimiento para toda la familia."
+                },
+                {
+                    name: "Museo Piedra Cruz Sur",
+                    cat: "cultura",
+                    distance: "25 km",
+                    coords: [-31.7226081, -65.0068989],
+                    desc: "Museo dedicado a la geología, paleontología y arqueología de Traslasierra. Sus colecciones de fósiles, minerales y piezas históricas permiten conocer la riqueza natural y cultural de la región."
+                },
+                {
+                    name: "Museo de Municiones",
+                    cat: "cultura",
+                    distance: "28 km",
+                    coords: [-31.7431299, -65.0021416],
+                    desc: "Museo dedicado a la historia militar, con una amplia colección de municiones, armamento histórico y objetos de distintas épocas. Un espacio ideal para conocer la evolución del equipamiento bélico y su contexto histórico."
+                },
+                {
+                    name: "Museo Comechingón",
+                    cat: "cultura",
+                    distance: "31 km",
+                    coords: [-31.7592477, -64.9725883],
+                    desc: "Espacio dedicado a preservar la historia y la cultura del pueblo comechingón, con exposiciones sobre su forma de vida, costumbres y el patrimonio arqueológico de Traslasierra."
+                },
+                {
+                    name: "Balneario La Cascada de Toro Muerto",
+                    cat: "naturaleza",
+                    distance: "51 km",
+                    coords: [-31.6454356, -64.9905484],
+                    desc: "Hermoso balneario natural formado por una cascada y pozones de aguas cristalinas, rodeado de vegetación serrana. Un lugar ideal para refrescarse, descansar y disfrutar de uno de los rincones más pintorescos de Traslasierra."
+                },
+                {
+                    name: "Quebrada del Toro Muerto",
+                    cat: "naturaleza",
+                    distance: "52 km",
+                    coords: [-31.6487749, -64.9784553],
+                    desc: "Espectacular quebrada serrana con formaciones rocosas, senderos y el arroyo Toro Muerto. Un entorno ideal para realizar caminatas, disfrutar de la naturaleza y descubrir uno de los paisajes más característicos de Traslasierra."
+                },
+                {
+                    name: "Camino a los Puentes Colgantes",
+                    cat: "naturaleza",
+                    distance: "114 km",
+                    coords: [-31.5510911, -64.6810048],
+                    desc: "Recorrido panorámico que une históricos puentes colgantes sobre el río Los Sauces, ofreciendo vistas espectaculares de las sierras, senderos y un entorno ideal para caminar, fotografiar y disfrutar de la naturaleza."
+                },
+                {
+                    name: "Primer Puente Colgante",
+                    cat: "cultura",
+                    distance: "106 km",
+                    coords: [-31.5632527, -64.7069396],
+                    desc: "Histórico puente colgante que cruza el río Los Sauces y forma parte de uno de los recorridos más emblemáticos de Traslasierra. Un sitio ideal para caminar, disfrutar del paisaje serrano y conocer parte del patrimonio de la región."
+                },
+                {
+                    name: "Segundo Puente Colgante",
+                    cat: "cultura",
+                    distance: "100 km",
+                    coords: [-31.563997, -64.711592],
+                    desc: "Segundo puente del histórico circuito de puentes colgantes de Traslasierra. Rodeado de un imponente paisaje serrano, ofrece un recorrido ideal para caminar, contemplar el río Los Sauces y disfrutar de la naturaleza."
+                },
+                {
+                    name: "Tercer Puente Colgante",
+                    cat: "cultura",
+                    distance: "97 km",
+                    coords: [-31.5665908, -64.7101147],
+                    desc: "Último de los históricos puentes colgantes del circuito de Traslasierra. Desde aquí se disfrutan excelentes vistas del río Los Sauces y del entorno serrano, convirtiéndolo en una parada ideal para recorrer a pie y tomar fotografías."
+                },
+                {
+                    name: "Cuarto Puente Colgante",
+                    cat: "cultura",
+                    distance: "93 km",
+                    coords: [-31.5708761, -64.709609],
+                    desc: "El último puente del recorrido de los Puentes Colgantes de Traslasierra, rodeado de un entorno natural único. Un excelente punto para disfrutar del río Los Sauces, caminar entre las sierras y contemplar el paisaje."
+                },
+                {
+                    name: "Quinto Puente Colgante",
+                    cat: "cultura",
+                    distance: "91 km",
+                    coords: [-31.5717383, -64.7105358],
+                    desc: "Puente colgante que forma parte del histórico circuito de Traslasierra. Su entorno natural, las vistas al río Los Sauces y la tranquilidad del paisaje lo convierten en una parada ideal para recorrer y disfrutar de las sierras."
+                },
+                {
+                    name: "Villa Benegas",
+                    cat: "pueblos",
+                    distance: "39 km",
+                    coords: [-31.6410843, -64.9559959],
+                    desc: "Pequeña localidad serrana de Traslasierra, rodeada de naturaleza y tranquilidad. Su entorno rural, los paisajes de montaña y la cercanía al río la convierten en un lugar ideal para descansar y disfrutar del aire libre."
+                },
+                {
+                    name: "Balneario San Sebastián",
+                    cat: "naturaleza",
+                    distance: "28 km",
+                    coords: [-31.7456456, -65.0125914],
+                    desc: "Balneario natural de aguas cristalinas y playas de arena, rodeado de un entorno serrano ideal para descansar, refrescarse y disfrutar del río en familia."
+                },
+                {
+                    name: "Cascada Mayor",
+                    cat: "naturaleza",
+                    distance: "30 km",
+                    coords: [-31.6399438, -64.9420198],
+                    desc: "Hermosa cascada sobre el Arroyo Pérez, rodeada de un entorno serrano con vegetación autóctona. Un rincón ideal para disfrutar de una caminata, contemplar el paisaje y relajarse junto al agua."
+                },
+                {
+                    name: "Balneario Abuela Teresa",
+                    cat: "naturaleza",
+                    distance: "25 km",
+                    coords: [-31.6580589, -64.9479242],
+                    desc: "Balneario natural de aguas cristalinas y ambiente familiar, rodeado de sierras y vegetación autóctona. Sus playas de arena y sectores de poca profundidad lo convierten en un lugar ideal para disfrutar del río y descansar."
+                },
+                {
+                    name: "Monumento a los Artesanos",
+                    cat: "cultura",
+                    distance: "20 km",
+                    coords: [-31.6833364, -64.9784848],
+                    desc: "Monumento que rinde homenaje a los artesanos de Traslasierra y al valor de los oficios tradicionales. Un punto emblemático para conocer parte de la identidad cultural y el trabajo artesanal de la región."
+                }
+                ,
+                {
+                    name: "Puente del Cura",
+                    cat: "cultura",
+                    distance: "21 km",
+                    coords: [-31.6738603, -64.9745386],
+                    desc: "Histórico puente vinculado al legado del Cura Brochero, rodeado de un hermoso paisaje serrano. Un lugar ideal para contemplar el río, recorrer la zona y conocer parte de la historia de Traslasierra."
+                },
+                {
+                    name: "Camino del Peregrino",
+                    cat: "cultura",
+                    distance: "65 km",
+                    coords: [-31.6126045, -64.9085164],
+                    desc: "Sendero histórico que recorre los pasos de San José Gabriel del Rosario Brochero a través de los paisajes de Traslasierra. Un recorrido ideal para combinar naturaleza, historia y espiritualidad."
+                },
+                {
+                    name: "Parque Geológico Arco del Cielo",
+                    cat: "naturaleza",
+                    distance: "63 km",
+                    coords: [-31.6324309, -64.9121299],
+                    desc: "Parque natural con impresionantes formaciones geológicas esculpidas por el paso del tiempo. Sus senderos y miradores permiten descubrir paisajes únicos y disfrutar de una de las maravillas naturales de Traslasierra."
+                },
+                {
+                    name: "Camino de las Altas Cumbres",
+                    cat: "naturaleza",
+                    distance: "59 km",
+                    coords: [-31.6555393, -64.9018557],
+                    desc: "Uno de los caminos panorámicos más emblemáticos de Córdoba, con espectaculares vistas de las Sierras Grandes, miradores naturales y paisajes únicos que conectan el Valle de Traslasierra con el Valle de Punilla."
+                },
+                {
+                    name: "Playa Nono",
+                    cat: "naturaleza",
+                    distance: "37 km",
+                    coords: [-31.8176672, -65.0181824],
+                    desc: "Uno de los balnearios más populares de Nono, con amplias playas de arena, aguas cristalinas y un entorno serrano ideal para disfrutar en familia, relajarse y refrescarse durante el verano."
+                },
+                {
+                    name: "Confluencia de los Ríos",
+                    cat: "naturaleza",
+                    distance: "36 km",
+                    coords: [-31.8071133, -65.0239211],
+                    desc: "Punto donde se unen los ríos Los Sauces y Chico de Nono, formando un paisaje de aguas cristalinas rodeado de sierras. Un lugar ideal para disfrutar de la naturaleza, descansar y apreciar uno de los rincones más emblemáticos de Traslasierra."
+                },
+                {
+                    name: "Río de los Sauces",
+                    cat: "naturaleza",
+                    distance: "34 km",
+                    coords: [-31.7926345, -65.013025],
+                    desc: "Uno de los ríos más representativos de Traslasierra, reconocido por sus aguas cristalinas, playas de arena y ollas naturales. Un lugar ideal para relajarse, disfrutar del paisaje serrano y refrescarse en plena naturaleza."
+                },
+                {
+                    name: "Primer Remanso",
+                    cat: "naturaleza",
+                    distance: "38 km",
+                    coords: [-31.7977288, -64.9860416],
+                    desc: "Balneario natural sobre el río Los Sauces, conocido por sus aguas cristalinas, playas de arena y sectores de poca profundidad. Un lugar ideal para descansar, disfrutar en familia y contemplar el paisaje serrano."
+                },
+                {
+                    name: "Paseo de las Esculturas",
+                    cat: "cultura",
+                    distance: "35 km",
+                    coords: [-31.8017455, -64.9990871],
+                    desc: "Espacio al aire libre que reúne esculturas de artistas locales y nacionales en un entorno natural. Un paseo ideal para disfrutar del arte, la cultura y los paisajes característicos de Traslasierra."
+                },
+                {
+                    name: "Acqualandia",
+                    cat: "recreacion",
+                    distance: "26 km",
+                    coords: [-31.7193707, -64.991897],
+                    desc: "Parque acuático con piscinas, toboganes y atracciones para todas las edades. Un lugar ideal para disfrutar de un día en familia y refrescarse durante el verano en el corazón de Traslasierra."
                 }
             ];
 
-            const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f' };
-            const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos' };
+            const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f', recreacion: '#9c3a7d' };
+            const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos', recreacion: 'Recreación' };
 
             // MapLibre usa [lng, lat]; guardamos coords como [lat, lng] para los links de Google
             const HOME = [-31.5960346, -65.0493451];
