@@ -470,6 +470,18 @@
             window._lugMap = map;
             window._lugMarkers = [];
 
+            // Chrome descarta parte del canvas WebGL al scrollear (navbar fija -> cambia el compositing).
+            // Forzamos un repintado en cada scroll para que el mapa no quede en blanco.
+            let _repaintPending = false;
+            window.addEventListener('scroll', () => {
+                if (_repaintPending) return;
+                _repaintPending = true;
+                requestAnimationFrame(() => {
+                    map.triggerRepaint();
+                    _repaintPending = false;
+                });
+            }, { passive: true });
+
             map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
             map.addControl(new maplibregl.AttributionControl({
                 compact: true,
