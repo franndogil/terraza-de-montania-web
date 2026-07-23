@@ -62,6 +62,12 @@
                         <button class="lug-filter" data-cat="recreacion">
                             <span class="lug-dot lug-dot--recreacion"></span>Recreación
                         </button>
+                        <button class="lug-filter" data-cat="salud">
+                            <span class="lug-dot lug-dot--salud"></span>Salud
+                        </button>
+                        <button class="lug-filter" data-cat="servicios">
+                            <span class="lug-dot lug-dot--servicios"></span>Servicios
+                        </button>
                     </div>
                 </div>
             </div>
@@ -443,11 +449,62 @@
                     distance: "26 km",
                     coords: [-31.7193707, -64.991897],
                     desc: "Parque acuático con piscinas, toboganes y atracciones para todas las edades. Un lugar ideal para disfrutar de un día en familia y refrescarse durante el verano en el corazón de Traslasierra."
+                },
+                {
+                    name: "Iglesia Nuestra Señora del Rosario",
+                    cat: "cultura",
+                    distance: "5 km",
+                    coords: [-31.6333202, -65.0549638],
+                    desc: "Histórica iglesia ubicada en el corazón de Panaholma, reconocida por su arquitectura sencilla y su importancia para la comunidad local. Un sitio ideal para conocer el patrimonio religioso y cultural de la región."
+                },
+                //servicios
+                {
+                    name: "YPF Cura Brochero",
+                    cat: "servicios",
+                    distance: "23 km",
+                    coords: [-31.708873, -65.016968],
+                    desc: "Estación de servicio con expendio de combustibles, tienda y servicios para viajeros. Un punto ideal para abastecerse antes de recorrer los principales atractivos de Traslasierra."
+                },
+                {
+                    name: "YPF Mina Clavero",
+                    cat: "servicios",
+                    distance: "26 km",
+                    coords: [-31.7298878, -65.0052801],
+                    desc: "Estación de servicio abierta las 24 horas con expendio de combustibles, tienda Full y servicios para viajeros. Un punto estratégico para abastecerse antes de recorrer Mina Clavero y Traslasierra."
+                },
+                {
+                    name: "Shell Mina Clavero",
+                    cat: "servicios",
+                    distance: "24 km",
+                    coords: [-31.726118, -65.006114],
+                    desc: "Estación de servicio con combustibles, tienda y servicios para viajeros. Una opción práctica para abastecerse antes de continuar el recorrido por Mina Clavero y Traslasierra."
+                },
+                //salud
+                {
+                    name: "Hospital Regional Dr. Luis María Bellodi",
+                    cat: "salud",
+                    distance: "28 km",
+                    coords: [-31.7431887, -64.9987061],
+                    desc: "Hospital público regional que brinda atención médica de guardia, consultorios y servicios de emergencia. Es el principal centro de salud de referencia para Mina Clavero, Villa Cura Brochero y gran parte de Traslasierra."
+                },
+                {
+                    name: "Farmacia Pura Vida",
+                    cat: "salud",
+                    distance: "27 km",
+                    coords: [-31.74301, -65.0049633],
+                    desc: "Farmacia ubicada en Mina Clavero que ofrece medicamentos, productos de cuidado personal y atención farmacéutica. Un punto de referencia para quienes necesiten asistencia durante su estadía en Traslasierra."
+                },
+                {
+                    name: "Farmacia Pura Vida III",
+                    cat: "salud",
+                    distance: "25 km",
+                    coords: [-31.7232145, -65.0067778],
+                    desc: "Farmacia ubicada en Villa Cura Brochero que ofrece medicamentos, productos de cuidado personal y atención farmacéutica. Una opción cercana para resolver necesidades de salud durante la estadía en Traslasierra."
                 }
             ];
 
-            const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f', recreacion: '#9c3a7d' };
-            const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos', recreacion: 'Recreación' };
+            const catColors = { naturaleza: '#3a7d44', cultura: '#c77b2e', pueblos: '#2d6a9f', recreacion: '#9c3a7d', salud: '#d1495b', servicios: '#4a7c7e' };
+            const catLabels = { naturaleza: 'Naturaleza', cultura: 'Cultura', pueblos: 'Pueblos cercanos', recreacion: 'Recreación', salud: 'Salud', servicios: 'Servicios' };
 
             // MapLibre usa [lng, lat]; guardamos coords como [lat, lng] para los links de Google
             const HOME = [-31.5960346, -65.0493451];

@@ -18,6 +18,13 @@
     pointer-events: none;
     z-index: -1;
 }
+/* Al abrir el menú mobile, la navbar transparente se vuelve sólida bordó */
+.navbar--transparent:has(.nav-links.active) {
+    background: var(--bordo);
+}
+.navbar--transparent:has(.nav-links.active)::before {
+    display: none;
+}
 
 /* ── HERO ────────────────────────────────────────────────── */
 .hero {
@@ -212,7 +219,7 @@
 
 /* Zone */
 .zone { position: relative; color: #fff; text-align: center; padding: clamp(4rem, 9vw, 7rem) 0; }
-.zone-bg { position: absolute; inset: 0; background: url('../assets/images/house-1/14.jpeg') center/cover; }
+.zone-bg { position: absolute; inset: 0; background: url('../assets/banners/vado_de_panaholma.jpg') center/cover; }
 .zone-bg::after { content: ''; position: absolute; inset: 0; background: rgba(60,20,15,0.62); }
 .zone .container { position: relative; z-index: 2; }
 .zone h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }

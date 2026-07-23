@@ -120,7 +120,8 @@ a { color: var(--bordo); }
 .navbar {
     background: var(--bordo);
     color: #fff;
-    padding: 0.7rem 0;
+    height: var(--nav-h);
+    padding: 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -128,13 +129,14 @@ a { color: var(--bordo); }
     transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 .navbar.scrolled {
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    box-shadow: none;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .navbar .logo img {

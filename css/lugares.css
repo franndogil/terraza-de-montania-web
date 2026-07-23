@@ -2,7 +2,7 @@
 .lug-hero {
     height: 65vh;
     min-height: 400px;
-    background-image: url('../assets/images/house-1/14.jpeg');
+    background-image: url('../assets/banners/vado_de_panaholma.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -128,6 +128,8 @@
 .lug-dot--cultura    { background: #c77b2e; }
 .lug-dot--pueblos    { background: #2d6a9f; }
 .lug-dot--recreacion { background: #9c3a7d; }
+.lug-dot--salud      { background: #d1495b; }
+.lug-dot--servicios  { background: #4a7c7e; }
 
 #map {
     width: 100%;
