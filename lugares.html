@@ -463,7 +463,9 @@
                 center: toLngLat(HOME),
                 zoom: 11,
                 scrollZoom: false,
-                attributionControl: false
+                attributionControl: false,
+                // Evita que Chrome deje el canvas en blanco al recomponer el WebGL durante el scroll
+                canvasContextAttributes: { preserveDrawingBuffer: true }
             });
             window._lugMap = map;
             window._lugMarkers = [];
