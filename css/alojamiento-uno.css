@@ -301,47 +301,6 @@
     margin: 0 0 12px;
 }
 
-/* ── RESEÑAS ───────────────────────────────────────────────────── */
-/* Los estilos base de .review viven en global.css; acá se ajustan a la
-   escala en px de esta página. */
-.listing-reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 32px;
-    align-items: start;
-}
-
-.listing-reviews .stars {
-    --star-size: 14px;
-    margin-bottom: 10px;
-}
-
-.listing-reviews .review-text {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--text-mid);
-    margin: 0 0 10px;
-}
-
-.listing-reviews .review-author {
-    font-size: 17px;
-}
-
-.listing-reviews-link {
-    display: inline-block;
-    margin-top: 24px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--brand-red);
-    text-decoration: none;
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 2px;
-}
-
-.listing-reviews-link:hover {
-    color: var(--bordo-dark);
-}
-
 .map-embed {
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -614,11 +573,6 @@
 
     .listing-title {
         font-size: 22px;
-    }
-
-    .listing-reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
     }
 
     .amenities-grid {
