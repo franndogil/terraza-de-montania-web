@@ -2,8 +2,10 @@
    HOME
    ============================================================ */
 
-/* El hero ocupa toda la pantalla por detrás de la navbar transparente */
-.home.content-wrap { padding-top: 0; }
+/* Solo cuando la navbar es transparente el hero pasa por detrás de ella.
+   Sin la clase navbar--transparent, el hero arranca debajo de la barra sólida
+   como en el resto de las páginas. */
+body:has(.navbar--transparent) .home.content-wrap { padding-top: 0; }
 
 /* Navbar transparente sobre el hero (se vuelve sólida al scrollear via .scrolled) */
 .navbar--transparent:not(.scrolled) {
@@ -29,10 +31,12 @@
 /* ── HERO ────────────────────────────────────────────────── */
 .hero {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - var(--nav-h));
     min-height: 560px;
     overflow: hidden;
 }
+/* Con navbar transparente el hero sí ocupa el alto completo */
+body:has(.navbar--transparent) .hero { height: 100vh; }
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -253,7 +257,8 @@
     .reviews-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 768px) {
-    .hero { height: 100svh; }
+    .hero { height: calc(100svh - var(--nav-h)); }
+    body:has(.navbar--transparent) .hero { height: 100svh; }
     .gallery-grid .big { grid-column: span 2; grid-row: span 1; }
     .scroll-hint { display: none; }
     .hero .btn { width: auto; }
