@@ -63,6 +63,12 @@
     gap: 1.8rem;
 }
 
+/* ── RESEÑA ──────────────────────────────────────────────── */
+.contact-review { background: var(--salmon-soft); }
+.contact-review .contact-intro { margin-bottom: 0; }
+.contact-review .stars { margin: 0 auto 1.1rem; }
+.contact-review .btn { margin-top: 1.8rem; }
+
 .contact-card {
     background: #fff;
     border: 1px solid var(--line);

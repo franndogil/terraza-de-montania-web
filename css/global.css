@@ -118,6 +118,54 @@ a { color: var(--bordo); }
 }
 .btn-outline:hover { background: var(--bordo); color: var(--salmon); }
 
+/* ── RESEÑAS ─────────────────────────────────────────────── */
+/* Cinco estrellas dibujadas con una máscara: el color sale de background-color,
+   así hereda la paleta sin necesidad de un ícono por estrella. */
+.stars {
+    --star-size: 15px;
+    display: block;
+    width: calc(var(--star-size) * 5);
+    height: var(--star-size);
+    margin: 0 0 0.9rem;
+    background-color: var(--bordo);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.4 6.9.7-5.2 4.7 1.5 6.9L12 17.3 5.9 20.7l1.5-6.9L2.2 9.1l6.9-.7z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.4 6.9.7-5.2 4.7 1.5 6.9L12 17.3 5.9 20.7l1.5-6.9L2.2 9.1l6.9-.7z'/%3E%3C/svg%3E");
+    -webkit-mask-size: var(--star-size) var(--star-size);
+    mask-size: var(--star-size) var(--star-size);
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+}
+
+.review {
+    margin: 0;
+}
+
+.review-text {
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--muted);
+    margin: 0 0 0.9rem;
+}
+
+.review-author {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--bordo);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.review-author span {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-top: 0.25rem;
+}
+
 /* Reveal on scroll (JS agrega .in) */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.in { opacity: 1; transform: none; }
@@ -241,7 +289,9 @@ a { color: var(--bordo); }
 .wa-float img { width: 28px; height: 28px; }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
-footer {
+/* Acotado al footer del sitio: como selector de elemento suelto pintaba
+   cualquier <footer> anidado en el contenido. */
+body > footer {
     background: var(--bordo);
     color: var(--salmon);
     padding: 3.5rem 0 1.5rem;
