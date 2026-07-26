@@ -4,6 +4,12 @@ Sitio web de **Terraza de Montaña**, una cabaña de alquiler ubicada en Los Mor
 
 El sitio presenta el alojamiento, su entorno natural y las actividades de la zona, e invita a los visitantes a consultar disponibilidad y contactarse por WhatsApp, Instagram o email.
 
+---
+
+**Demo:** https://terrazademontana.com
+
+---
+
 ## Características
 
 - **Sitio estático** en HTML, CSS y JavaScript vanilla — sin frameworks ni build step.
