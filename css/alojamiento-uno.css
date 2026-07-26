@@ -543,17 +543,10 @@
     .lightbox-next {
         font-size: 28px;
         padding: 8px 14px;
-        border-radius: 50px;
-        background: rgba(119, 26, 28, 0.75);
     }
 
     .lightbox-prev { left: 8px; }
     .lightbox-next { right: 8px; }
-
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-        background: rgba(119, 26, 28, 0.95);
-    }
 
     .gallery-section {
         display: none;

@@ -1,7 +1,6 @@
 /* HERO */
 .lug-hero {
-    height: 65vh;
-    min-height: 400px;
+    height: var(--hero-h);
     background-image: url('../assets/banners/vado_de_panaholma.jpg');
     background-size: cover;
     background-position: center;
@@ -12,39 +11,41 @@
 
 .lug-hero-overlay {
     width: 100%;
-    padding: 4rem 10%;
-    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    padding: 4rem var(--hero-pad-x);
+    background: linear-gradient(to top, rgba(40,15,10,0.75) 0%, transparent 100%);
     color: #fff;
 }
 
 .lug-hero-label {
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: #fbd5b2;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
+    color: var(--salmon);
 }
 
 .lug-hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-weight: 400;
     margin: 0;
-    line-height: 1.15;
+    line-height: 1.12;
     color: #fff;
+    text-shadow: 0 3px 24px rgba(0,0,0,0.35);
 }
 
 /* SHARED SECTION */
 .lug-section {
-    padding: 5rem 0;
+    padding: var(--section-y) 0;
 }
 
 .lug-container {
-    width: 80%;
-    max-width: 1100px;
+    width: var(--content-w);
     margin: 0 auto;
 }
 
+/* Excepción deliberada: el mapa necesita más ancho que el eje de texto */
 .lug-container--wide {
     width: 90%;
     max-width: 1400px;
@@ -53,25 +54,26 @@
 .lug-section-tag {
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.22em;
     font-size: 0.72rem;
     font-weight: 700;
-    color: #771a1c;
-    margin-bottom: 0.75rem;
+    color: var(--bordo);
+    margin-bottom: 0.9rem;
 }
 
 .lug-section-title {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    font-weight: 700;
-    color: #333;
+    font-family: var(--font-head);
+    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+    font-weight: 400;
+    color: var(--bordo);
     margin: 0 0 2rem;
-    line-height: 1.2;
+    line-height: 1.18;
 }
 
 .lug-lead {
     font-size: 1.05rem;
     line-height: 1.85;
-    color: #444;
+    color: var(--muted);
     max-width: 68ch;
     margin: 0;
 }
@@ -111,8 +113,8 @@
 
 .lug-filter:hover,
 .lug-filter.active {
-    border-color: #771a1c;
-    color: #771a1c;
+    border-color: var(--bordo);
+    color: var(--bordo);
     background: rgba(119,26,28,0.05);
 }
 
@@ -154,7 +156,7 @@
 }
 
 .map-fallback--error p {
-    color: #771a1c;
+    color: var(--bordo);
 }
 
 /* Contenedor del marcador (punto + etiqueta) */
@@ -180,7 +182,7 @@
 }
 
 .map-label--home {
-    color: #771a1c;
+    color: var(--bordo);
 }
 
 /* Marcadores del mapa */
@@ -193,20 +195,21 @@
 .map-marker--home {
     width: 18px;
     height: 18px;
-    background: #771a1c;
+    background: var(--bordo);
     box-shadow: 0 0 0 3px #fff, 0 1px 6px rgba(0,0,0,.35);
 }
 
 /* CTA */
 .lug-cta-section {
-    padding: 5rem 0;
+    padding: var(--section-y) 0;
     text-align: center;
     border-top: 1px solid rgba(119,26,28,0.15);
 }
 
 .lug-cta-text {
-    font-size: 1.1rem;
-    color: #555;
+    font-family: var(--font-head);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--bordo);
     margin: 0 0 2rem;
 }
 
@@ -219,32 +222,34 @@
 
 .lug-cta-btn {
     display: inline-block;
-    background: #771a1c;
-    color: #fbd5b2;
+    background: var(--bordo);
+    color: var(--salmon);
     text-decoration: none;
-    padding: 0.85rem 2.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: background 0.2s;
+    padding: 0.9rem 2.4rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 10px 26px rgba(119, 26, 28, 0.22);
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .lug-cta-btn:hover {
-    background: #5a1315;
-    color: #fbd5b2;
+    background: var(--bordo-dark);
+    color: var(--salmon);
+    transform: translateY(-3px);
     text-decoration: none;
 }
 
 .lug-cta-btn--outline {
     background: transparent;
-    border: 2px solid #771a1c;
-    color: #771a1c;
+    border: 2px solid var(--bordo);
+    color: var(--bordo);
+    box-shadow: none;
 }
 
 .lug-cta-btn--outline:hover {
-    background: #771a1c;
-    color: #fbd5b2;
+    background: var(--bordo);
+    color: var(--salmon);
 }
 
 /* Popup del mapa */
@@ -286,7 +291,7 @@
 
 .lug-popup-nav {
     display: block;
-    background: #771a1c;
+    background: var(--bordo);
     color: #fff !important;
     text-decoration: none !important;
     padding: .45rem 1rem;
@@ -320,29 +325,12 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .lug-hero {
-        height: 55vh;
-    }
-
     .lug-hero-overlay {
-        padding: 3rem 5%;
-    }
-
-    .lug-section {
-        padding: 3.5rem 0;
-    }
-
-    .lug-container {
-        width: 90%;
+        padding: 3rem var(--hero-pad-x);
     }
 
     .lug-filters-wrap {
         padding: 1.25rem 0 1rem;
-    }
-
-    .lug-filters {
-        width: 90%;
-        margin: 0 auto;
     }
 
     #map {
@@ -350,7 +338,4 @@
         min-height: 420px;
     }
 
-    .lug-cta-section {
-        padding: 3.5rem 0;
-    }
 }

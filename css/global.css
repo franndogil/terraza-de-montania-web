@@ -20,6 +20,15 @@
     --shadow-sm: 0 8px 24px rgba(70, 30, 20, 0.08);
     --radius: 18px;
     --nav-h: 66px;
+    /* Altura estándar del hero de páginas internas (nosotros, la zona, contacto).
+       La portada usa 100vh aparte. */
+    --hero-h: clamp(360px, 52vh, 520px);
+    /* Ancho estándar del contenido: navbar, secciones y footer se alinean a este eje */
+    --content-w: min(1100px, 88%);
+    /* Sangría lateral del texto sobre el hero: deliberadamente más al borde que el contenido */
+    --hero-pad-x: 8%;
+    /* Ritmo vertical de las secciones de contenido */
+    --section-y: clamp(3.5rem, 8vw, 6.5rem);
 
     --font-body: 'MontserratCustom', system-ui, sans-serif;
     --font-head: Georgia, 'Times New Roman', serif;
@@ -66,7 +75,7 @@ a { color: var(--bordo); }
 }
 
 .container {
-    width: min(1140px, 90%);
+    width: var(--content-w);
     margin-inline: auto;
 }
 
@@ -240,7 +249,7 @@ footer {
 }
 
 .footer-top {
-    width: min(1140px, 90%);
+    width: var(--content-w);
     margin-inline: auto;
     display: flex;
     align-items: flex-start;
@@ -320,7 +329,7 @@ footer {
 .powered-by img { width: 110px; }
 
 .footer-bottom {
-    width: min(1140px, 90%);
+    width: var(--content-w);
     margin: 2.5rem auto 0;
     display: flex;
     justify-content: center;
@@ -339,6 +348,12 @@ footer {
 
 /* ── MOBILE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
+    :root {
+        --hero-h: clamp(300px, 45vh, 400px);
+        --content-w: 90%;
+        --hero-pad-x: 6%;
+    }
+
     .menu-toggle {
         display: inline-flex;
         align-items: center;

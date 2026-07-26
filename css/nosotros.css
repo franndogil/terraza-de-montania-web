@@ -4,9 +4,8 @@
 
 /* ── HERO ─────────────────────────────────────────────────── */
 .nos-hero {
-    height: 68vh;
-    min-height: 420px;
-    background-image: url('../assets/images/house-1/2.jpeg');
+    height: var(--hero-h);
+    background-image: url('../assets/banners/Valle_traslasierra_2.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -16,7 +15,7 @@
 
 .nos-hero-overlay {
     width: 100%;
-    padding: 4rem 8%;
+    padding: 4rem var(--hero-pad-x);
     background: linear-gradient(to top, rgba(40,15,10,0.75) 0%, transparent 100%);
     color: #fff;
 }
@@ -41,10 +40,10 @@
 }
 
 /* ── SECCIONES ───────────────────────────────────────────── */
-.nos-section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+.nos-section { padding: var(--section-y) 0; }
 
 .nos-container {
-    width: min(1100px, 88%);
+    width: var(--content-w);
     margin: 0 auto;
 }
 
@@ -129,49 +128,28 @@
 .nos-values {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
+    gap: clamp(2rem, 5vw, 3.5rem);
 }
 
-.nos-value-card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 2rem 1.75rem;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.nos-value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-
-.nos-value-num {
+.nos-value h3 {
     font-family: var(--font-head);
-    font-size: 2.6rem;
+    font-size: 1.45rem;
     font-weight: 400;
     color: var(--bordo);
-    opacity: 0.35;
-    line-height: 1;
-    margin-bottom: 0.9rem;
+    margin: 0 0 0.7rem;
+    line-height: 1.25;
 }
 
-.nos-value-card h3 {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin: 0 0 0.6rem;
-    color: var(--ink);
-}
-
-.nos-value-card p {
-    font-size: 0.92rem;
-    line-height: 1.75;
+.nos-value p {
+    font-size: 0.98rem;
+    line-height: 1.85;
     color: var(--muted);
     margin: 0;
 }
 
 /* ── QUOTE ────────────────────────────────────────────────── */
 .nos-quote-section {
-    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    padding: var(--section-y) 0;
     background: var(--salmon-soft);
 }
 
@@ -188,7 +166,7 @@
 
 /* ── CTA ──────────────────────────────────────────────────── */
 .nos-cta-section {
-    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    padding: var(--section-y) 0;
     text-align: center;
 }
 
@@ -230,12 +208,10 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-    .nos-hero { height: 58vh; }
-    .nos-hero-overlay { padding: 3rem 6%; }
-    .nos-container { width: 90%; }
+    .nos-hero-overlay { padding: 3rem var(--hero-pad-x); }
     .nos-text--cols { columns: 1; }
     .nos-split { grid-template-columns: 1fr; gap: 2.5rem; }
     .nos-split-image img { height: 300px; }
     .nos-split-image::before { inset: -10px 10px 10px -10px; }
-    .nos-values { grid-template-columns: 1fr; gap: 1.25rem; }
+    .nos-values { grid-template-columns: 1fr; gap: 2rem; }
 }

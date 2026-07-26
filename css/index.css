@@ -117,7 +117,7 @@
 @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
 /* ── SECCIONES ───────────────────────────────────────────── */
-.home-section { padding: clamp(4rem, 9vw, 7rem) 0; }
+.home-section { padding: var(--section-y) 0; }
 
 .section-head {
     text-align: center;
@@ -201,7 +201,7 @@
     text-align: center;
 }
 .stat .num { font-family: var(--font-head); font-size: clamp(2.6rem, 6vw, 4rem); color: var(--bordo); line-height: 1; }
-.stat .lbl { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 700; color: var(--muted); margin-top: 0.5rem; }
+.stat .lbl { text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.72rem; font-weight: 700; color: var(--muted); margin-top: 0.5rem; }
 
 /* Gallery */
 .gallery { background: var(--salmon-soft); }
@@ -218,7 +218,7 @@
 .gallery-cta { text-align: center; margin-top: 2.6rem; }
 
 /* Zone */
-.zone { position: relative; color: #fff; text-align: center; padding: clamp(4rem, 9vw, 7rem) 0; }
+.zone { position: relative; color: #fff; text-align: center; padding: var(--section-y) 0; }
 .zone-bg { position: absolute; inset: 0; background: url('../assets/banners/vado_de_panaholma.jpg') center/cover; }
 .zone-bg::after { content: ''; position: absolute; inset: 0; background: rgba(60,20,15,0.62); }
 .zone .container { position: relative; z-index: 2; }
