@@ -80,7 +80,7 @@ Luego abrí <http://localhost:8000> en el navegador.
 
 Al ser estático, se puede publicar en cualquier hosting de archivos estáticos (GitHub Pages, Netlify, Vercel, etc.).
 
-Antes de publicar, reemplazá el placeholder `TU-DOMINIO` por el dominio real en:
+El dominio de producción es `https://terrazademontana.com`, ya configurado en:
 
 - [robots.txt](robots.txt)
 - [sitemap.xml](sitemap.xml)
