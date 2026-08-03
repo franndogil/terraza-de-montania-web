@@ -87,10 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 other.classList.remove('open');
                 const oa = other.querySelector('.faq-a');
                 if (oa) oa.style.maxHeight = null;
+                const oq = other.querySelector('.faq-q');
+                if (oq) oq.setAttribute('aria-expanded', 'false');
             });
             if (!isOpen) {
                 item.classList.add('open');
                 a.style.maxHeight = a.scrollHeight + 'px';
+                q.setAttribute('aria-expanded', 'true');
             }
         });
     });
